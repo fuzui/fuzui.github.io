@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-03-11T13:03:36.838Z</updated>
+  <updated>2019-03-14T02:59:31.873Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>总结一些linux的基本命令</title>
+    <link href="http://yoursite.com/2019/03/14/linuxCommand/"/>
+    <id>http://yoursite.com/2019/03/14/linuxCommand/</id>
+    <published>2019-03-14T02:56:32.000Z</published>
+    <updated>2019-03-14T02:59:31.873Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="简要"><a href="#简要" class="headerlink" title="简要"></a>简要</h2><p>一些基本的linux命令，我认为像这些命令之类的，必须要多谢多用才能熟记。</p><h4 id="基本命令与解释"><a href="#基本命令与解释" class="headerlink" title="基本命令与解释"></a>基本命令与解释</h4><p>1.<strong>mkdir</strong>        创建目录</p><pre><code>-p    创建递归目录</code></pre><p>2.<strong>touch</strong>        创建文件或修改文件时间</p><pre><code>-a    仅修改读取时间（atime）-m    仅修改修改时间（mtime）、-d    两者都修改</code></pre><p>3.<strong>cat</strong>        查看文件</p><pre><code>-n    显示行号</code></pre><p>4.<strong>less</strong></p><pre><code>more        分页查看</code></pre><p>5.<strong>head</strong>        从头查看</p><p>6.<strong>tail</strong>        从后看</p><pre><code>-f         实时查看日志文件</code></pre><p>7.<strong>grep</strong>        筛选，常配合管道使用</p><pre><code>-n显示收集到信息的行号-v用于反选信息</code></pre><p>8.<strong>wc</strong>        -l  统计行数、-w   字节数、-c  单词数</p><p>9.<strong>du</strong>        查看大小</p><p>10.<strong>cp  (旧)  (新) </strong>         复制</p><p>11.<strong>mv  (旧)  (新)</strong>         剪切或重命名</p><p>12.<strong>useradd</strong>        添加用户（只删除用户，目录保留，添加-r参数，用户目录都删除）</p><pre><code>userdel 删除用户whoami 查询当前用户名称</code></pre><p>13.<strong>groupadd</strong>        添加用户组</p><p>14.<strong>chmod [ugoa]+[rwx] 文件</strong></p><pre><code>chmod ___ 文件        4r    2w    1x</code></pre><p>15.<strong>echo</strong>        输出</p><p>16.<strong>date</strong>        用于显示及设置系统的时间或日期</p><pre><code>-s “”设置时间</code></pre><p>17.<strong>reboot</strong>        重启系统</p><p>18.<strong>poweroff</strong>        关闭系统</p><p>19.<strong>wegt</strong>        下周网络文件</p><pre><code>-p        下载到指定目录-r        递归下载</code></pre><p>20.<strong>ps</strong>        查看系统中进程状态</p><pre><code>-aux显示：R（运行）S（终端）D（不可中断）Z（僵死）T（停止）</code></pre><p>21.<strong>top</strong>        动态监视进程活动和系统负载信息</p><pre><code>第一行：系统时间    运行时间    显示终端数    系统负载第二行：进程总数    运行中的进程数    睡眠中的进程数    停止的进程数    僵死的进程数第三行：（百分比）用户占用    系统内核占用    改变过优先级的进程    空闲的资源第四行：物理内存总量比    内存使用量    内存空闲量    作为内存缓存的内存量第五行：虚拟内存总量    虚拟内存使用量    虚拟内存空闲量    已被提前加载的内存量</code></pre><p>22.<strong>pidof</strong>        查询某个服务的pid值</p><p>23.<strong>kill</strong>        用于终止某个指定pid的服务进程</p><p>24.<strong>killall</strong>        终止某个指定名称的服务所对应的全部进程</p><p>25.<strong>ifconfig</strong>        获取网咖配置与网络状态信息</p><p>26.<strong>uanme</strong>        -a    查看系统内核与系统版本等信息</p><p>27.<strong>uptime</strong>        查看系统的负载信息</p><p>28.<strong>free</strong>        -h    显示当前系统中内存使用量情况</p><p>29.<strong>who</strong>        查看登入主机的用户终端信息</p><p>30.<strong>last</strong>        查看所有系统的登录记录</p><p>31.<strong>history</strong>        显示历史执行过的命令    通过“!命令符号”执行某条命令</p><pre><code>-c    清空</code></pre><p>32.<strong>sosreport</strong>        收集系统配置及架构信息并输出诊断文档</p><p>33.<strong>pwd</strong>        显示当前目录</p><p>32.<strong>cd</strong>        切换目录</p><p>33.<strong>ls</strong>    ll        查看当前目录下的文件</p><p>34.<strong>tr  (old) (new)</strong>    替换文件中的字符</p><p>35.<strong>stat</strong>        查看文件具体存储信息和时间</p><pre><code>access    modify    change</code></pre><p>36.<strong>cut</strong>        按列提取文本字符</p><pre><code>-d    紧跟分隔符-f    紧跟列号</code></pre><p>37.<strong>diff</strong>        比较多个文件文本的差异</p><pre><code>--brief    判断文件是否相同-c       显示文件具体的不同</code></pre><p>38.<strong>rm</strong>        删除</p><pre><code>-f    无需二次确认-rf    强制删除</code></pre><p>39.<strong>file</strong>        查看文件的类型</p><p>40.<strong>tar</strong>        解压缩</p><pre><code>一般压缩-czvf    一般解压-xzvf</code></pre><p>41.<strong>find</strong>        按照指定条件查找文件</p><pre><code>-name-user-group   -mtime -n +n        -n指n天以内，+n指n天以前-atime -n +n-ctime -n +n</code></pre><p>42.<strong>fdisk</strong>    -l    查看磁盘</p><p>43.<strong>vim编辑器</strong></p><pre><code>dd删除yy复制v撤销上一步操作p粘贴:w    q     wq     q!    wq!:set nu         显示行号:set nonu        不显示行号:命令            执行该命令:整数        跳转到该行</code></pre><p>44.<strong>crontab</strong>        定时任务</p><pre><code>-e编辑    -l查询    -r删除当前用户的所有任务编辑格式        *    *    *    *    *    第一个：一小时内的第几分钟执行0-59    第二个：一天中的第几个小时执行0-23    第三个：一个月中第几天执行1-31    第四个：一年中当中的第几个月执行1-12    第五个：一周当中星期几执行0-7（0和7都是周日）特殊符号    * 任何时间    ，多个时间分割       - 连续时间    */n每个n执行一次无效服务时重启定时服务service crond restart</code></pre><p>45.<strong>sync</strong>     将内存数据同步到磁盘，关机重启都应该执行</p><hr>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;简要&quot;&gt;&lt;a href=&quot;#简要&quot; class=&quot;headerlink&quot; title=&quot;简要&quot;&gt;&lt;/a&gt;简要&lt;/h2&gt;&lt;p&gt;一些基本的linux命令，我认为像这些命令之类的，必须要多谢多用才能熟记。&lt;/p&gt;
+&lt;h4 id=&quot;基本命令与解释&quot;&gt;&lt;a href=&quot;#基
+      
+    
+    </summary>
+    
+      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
+    
+    
+      <category term="linux命令" scheme="http://yoursite.com/tags/linux%E5%91%BD%E4%BB%A4/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
