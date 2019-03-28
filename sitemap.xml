@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2019/03/27/hadoop-fully-distributed/</loc>
+    
+    <lastmod>2019-03-28T10:56:25.940Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/03/25/linux-ftp-conf/</loc>
+    
+    <lastmod>2019-03-28T10:56:23.528Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/about/index.html</loc>
     
     <lastmod>2019-03-26T14:50:59.566Z</lastmod>
@@ -26,13 +40,6 @@
     <loc>http://yoursite.com/2019/03/25/Hadoop-pseudo-distributed/</loc>
     
     <lastmod>2019-03-26T09:08:46.153Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2019/03/25/linux-ftp-conf/</loc>
-    
-    <lastmod>2019-03-25T06:51:06.442Z</lastmod>
     
   </url>
   
