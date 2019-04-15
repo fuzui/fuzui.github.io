@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2019/04/15/studentInfoManage-SSM/</loc>
+    
+    <lastmod>2019-04-15T11:24:10.360Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/04/15/mysql-master-slave/</loc>
+    
+    <lastmod>2019-04-15T11:18:22.713Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/04/06/centos-crontab/</loc>
+    
+    <lastmod>2019-04-06T06:03:25.100Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2019/04/03/hive/</loc>
     
     <lastmod>2019-04-03T12:12:05.065Z</lastmod>
