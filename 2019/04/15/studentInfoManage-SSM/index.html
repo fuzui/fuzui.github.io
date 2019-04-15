@@ -92,7 +92,7 @@
 <meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/1555316814587.png">
 <meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190415162832.png">
 <meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190415164959.png">
-<meta property="og:updated_time" content="2019-04-15T11:24:10.360Z">
+<meta property="og:updated_time" content="2019-04-15T11:28:19.489Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于SSM的学生信息管理系统(选课)">
 <meta name="twitter:description" content="项目简介：由SpringMVC+MyBatis为主要框架，mysql8.0配置主从复制实现读写分离，主机丛机分别为腾讯云的服务器，而项目部署在阿里云上。前端主要由bootstrap完成，背景用particles.js插件。数据库交互查询用到pagehelper分页。在添加修改相关功能时通过ajax来验证其主键是否存在可用。代码层次清晰，输入框约束较高，已配置登录拦截。">
@@ -412,10 +412,8 @@
 <h4 id="二、环境搭建"><a href="#二、环境搭建" class="headerlink" title="二、环境搭建"></a>二、环境搭建</h4><ol>
 <li>建议安装eclipse4.8及以上<br> 官网下载：<a href="https://www.eclipse.org/downloads/" target="_blank" rel="noopener">点击进入官网下载</a></li>
 <li>JDK 1.8<br> 官网下载：<a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noopener">点击进入官网下载</a></li>
-<li><p>MySQL8.0<br> 官网下载：<a href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/mysql/</a><br> windows安装：略！<br> linux安装请查看：<br> mysql主从搭建(可有可无)：如果不需要读写分离只需要把applicationContext.xml配置文件改一下即可，这样也就不必搭建主从。<br> 搭建有以下方式<br> （1）单台linux通过docker搭建mysql主从：<br> <a href="https://blog.csdn.net/supermao1013/article/details/83065682" target="_blank" rel="noopener">https://blog.csdn.net/supermao1013/article/details/83065682</a><br> （2）两台云服务器或虚拟机（我用的这种方式）：    </p>
-</li>
-<li><p>tomcat 9.0<br> 官方下载：<a href="https://tomcat.apache.org/download-90.cgi" target="_blank" rel="noopener">点击进入官网下载</a></p>
-</li>
+<li>MySQL8.0<br> 官网下载：<a href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/mysql/</a><br> windows安装：略！<br> linux安装请查看：<a href="https://fuzui.net/2019/04/15/mysql-master-slave/#more" target="_blank" rel="noopener">https://fuzui.net/2019/04/15/mysql-master-slave/#more</a><br> mysql主从搭建(可有可无)：如果不需要读写分离只需要把applicationContext.xml配置文件改一下即可，这样也就不必搭建主从。<br> 搭建有以下方式<br> （1）单台linux通过docker搭建mysql主从：<br> <a href="https://blog.csdn.net/supermao1013/article/details/83065682" target="_blank" rel="noopener">https://blog.csdn.net/supermao1013/article/details/83065682</a><br> （2）两台云服务器或虚拟机（我用的这种方式）：<br> <a href="https://fuzui.net/2019/04/15/mysql-master-slave/#more" target="_blank" rel="noopener">https://fuzui.net/2019/04/15/mysql-master-slave/#more</a></li>
+<li>tomcat 9.0<br> 官方下载：<a href="https://tomcat.apache.org/download-90.cgi" target="_blank" rel="noopener">点击进入官网下载</a></li>
 <li><p>navicat数据库工具<br> 百度网盘下载：<a href="https://pan.baidu.com/s/1BWQglimJH4_heiKLyH0lKg" target="_blank" rel="noopener">https://pan.baidu.com/s/1BWQglimJH4_heiKLyH0lKg</a><br> 提取码：eslh</p>
 <p> <em>eclipse、jdk、tomcat等相关安装配置步骤省略</em></p>
 </li>
