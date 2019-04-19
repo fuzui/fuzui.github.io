@@ -110,7 +110,7 @@
 <meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190419220819.png">
 <meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190419220924.png">
 <meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190419221727.png">
-<meta property="og:updated_time" content="2019-04-19T15:20:53.007Z">
+<meta property="og:updated_time" content="2019-04-19T15:38:52.492Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MongoDB复制集介绍及搭建">
 <meta name="twitter:description" content="简介  为了防止数据错误和丢失，采用复制集可以数据同步到多个服务器，提供了数据的冗余备份，在多个服务器上存储数据副本，提高了数据的可用性，保证了数据的安全性。  参考《MongoDB游记之轻松入门到进阶》">
@@ -482,7 +482,7 @@
 
 </em> 查看配置<br><code>rs.conf()</code><br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190419205018.png" alt><br>会发现只有一个节点，因为从节点和仲裁者节点还未添加。<br><br><em> 添加从节点<br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190419205119.png" alt><br><code>rs.add(&quot;mongodb-slave:27017&quot;)</code>
 </em> 添加仲裁者节点<br> <code>rs.addArb(&quot;mongodb-arbiter:27017&quot;)</code><br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190419205207.png" alt><br><em> 重新查看配置<br><code>rs.conf()</code><br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190419205319.png" alt>
-</em> 查看状态<br><code>rs.status()</code><br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190419205412.png" alt><br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190419205459.png" alt><br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190419205520.png" alt><br><br>#### 五、数据同步测试 ####<br><br>在安装时我曾创了一个wwze库，里面插入一条数据如<br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190419205809.png" alt><br>现在在主节点中再写入一条新数据<br><code>db.user.insert({name:&quot;张三&quot;,age:21,address:&quot;上海&quot;})</code><br><em> 查看<br><code>db.user.find().pretty()</code><br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190419210220.png" alt>
+</em> 查看状态<br><code>rs.status()</code><br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190419205412.png" alt><br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190419205459.png" alt><br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190419205520.png" alt><br><br><br><br>#### 五、数据同步测试 ####<br><br>在安装时我曾创了一个wwze库，里面插入一条数据如<br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190419205809.png" alt><br>现在在主节点中再写入一条新数据<br><code>db.user.insert({name:&quot;张三&quot;,age:21,address:&quot;上海&quot;})</code><br><em> 查看<br><code>db.user.find().pretty()</code><br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190419210220.png" alt>
 
 </em> 进入从节点<br> 在mongodb-slave中执行<br> <code>mongo</code><br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190419210353.png" alt><br>设置slave为true<br><code>rs.slaveOk()</code><br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190419210701.png" alt><br>这里我查看dbs发现没有数据库，是因为我还没有登录！<br><code>use admin</code><br><code>db.auth(&quot;root&quot;,&quot;root&quot;)</code><br>再次查看<br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190419210853.png" alt><br>最后进入wwze库查看一些刚在主节点写的数据是否同步<br><code>use wwze</code><br><code>db.user.find().pretty()</code><br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190419212002.png" alt><br><br>* 而进入仲裁者节点时，会发现不能读写，因为他只负责投票选举。<br> 在mongodb-arbiter机器中<br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190419212222.png" alt><br><br><br><font color="blue">至此，副本集搭建完成</font>
 
