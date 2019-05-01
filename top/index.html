@@ -77,17 +77,17 @@
 
 
 
-<meta name="description" content="AV.initialize(&quot;1qik4oMNkaMThFO6F51l9On0-gzGzoHsz&quot;, &quot;54cxjbJN5xlqAG0YoKJpcidk&quot;);    var time=0   var title=&quot;&quot;   var url=&quot;&quot;   var query = new AV.Query(&apos;Counter&apos;);//表名   query.notEqualTo(&apos;id&apos;,0); //id不为">
+<meta name="description" content="AV.initialize(&quot;1qik4oMNkaMThFO6F51l9On0-gzGzoHsz&quot;, &quot;54cxjbJN5xlqAG0YoKJpcidk&quot;);    var time=0   var title=&quot;&quot;   var url=&quot;&quot;   var query = new AV.Query(&apos;Counter&apos;);   query.notEqualTo(&apos;id&apos;,0);   query.d">
 <meta property="og:type" content="website">
 <meta property="og:title" content="扶醉">
 <meta property="og:url" content="http://yoursite.com/top/index.html">
 <meta property="og:site_name" content="扶醉">
-<meta property="og:description" content="AV.initialize(&quot;1qik4oMNkaMThFO6F51l9On0-gzGzoHsz&quot;, &quot;54cxjbJN5xlqAG0YoKJpcidk&quot;);    var time=0   var title=&quot;&quot;   var url=&quot;&quot;   var query = new AV.Query(&apos;Counter&apos;);//表名   query.notEqualTo(&apos;id&apos;,0); //id不为">
+<meta property="og:description" content="AV.initialize(&quot;1qik4oMNkaMThFO6F51l9On0-gzGzoHsz&quot;, &quot;54cxjbJN5xlqAG0YoKJpcidk&quot;);    var time=0   var title=&quot;&quot;   var url=&quot;&quot;   var query = new AV.Query(&apos;Counter&apos;);   query.notEqualTo(&apos;id&apos;,0);   query.d">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-01T17:02:33.447Z">
+<meta property="og:updated_time" content="2019-05-01T17:04:25.316Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="扶醉">
-<meta name="twitter:description" content="AV.initialize(&quot;1qik4oMNkaMThFO6F51l9On0-gzGzoHsz&quot;, &quot;54cxjbJN5xlqAG0YoKJpcidk&quot;);    var time=0   var title=&quot;&quot;   var url=&quot;&quot;   var query = new AV.Query(&apos;Counter&apos;);//表名   query.notEqualTo(&apos;id&apos;,0); //id不为">
+<meta name="twitter:description" content="AV.initialize(&quot;1qik4oMNkaMThFO6F51l9On0-gzGzoHsz&quot;, &quot;54cxjbJN5xlqAG0YoKJpcidk&quot;);    var time=0   var title=&quot;&quot;   var url=&quot;&quot;   var query = new AV.Query(&apos;Counter&apos;);   query.notEqualTo(&apos;id&apos;,0);   query.d">
 
 
 
@@ -277,25 +277,26 @@
       <div class="post-body">
         
         
-          <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+          <p><div id="top"></div></p>
+<script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
 <script>AV.initialize("1qik4oMNkaMThFO6F51l9On0-gzGzoHsz", "54cxjbJN5xlqAG0YoKJpcidk");</script>
 <script type="text/javascript">
   var time=0
   var title=""
   var url=""
-  var query = new AV.Query('Counter');//表名
-  query.notEqualTo('id',0); //id不为0的结果
-  query.descending('time'); //结果按阅读次数降序排序
-  query.limit(20);  //最终只返回10条结果
+  var query = new AV.Query('Counter');
+  query.notEqualTo('id',0);
+  query.descending('time');
+  query.limit(1000);
   query.find().then(function (todo) {
-    for (var i=0;i<10;i++){ 
+    for (var i=0;i<1000;i++){
       var result=todo[i].attributes;
-      time=result.time;  //阅读次数
-      title=result.title; //文章标题
-      url=result.url;     //文章url
-      var content="<p>"+"<font color='#0477ab'>"+"【 阅读次数:"+time+" 】"+"<a href='"+"https://fuzui.net"+url+"'>"+title+"</font>"+"</a>"+"</p>";
-      // document.write("<a href='"+"http://fuzui.net/"+url+"'>"+title+"</a>"+"    Readtimes:"+time+"<br>");
-      document.getElementById("heheda").innerHTML+=content
+      time=result.time;
+      title=result.title;
+      url=result.url;
+      // var content="<a href='"+"https://fuzui.net"+url+"'>"+title+"</a>"+"<br>"+"<font color='#fff'>"+"阅读次数："+time+"</font>"+"<br><br>";
+      var content="<p>"+"<font color='#1C1C1C'>"+"【 阅读次数:"+time+" 】"+"</font>"+"<a href='"+"https://fuzui.net"+url+"'>"+title+"</a>"+"</p>";
+      document.getElementById("top").innerHTML+=content
     }
   }, function (error) {
     console.log("error");
