@@ -18,8 +18,8 @@
   
   <entry>
     <title>bootstrap样式记录</title>
-    <link href="https://fuzui.net/bootstrap-basis.html"/>
-    <id>https://fuzui.net/bootstrap-basis.html</id>
+    <link href="https://fuzui.net/bootstrap%E5%9F%BA%E6%9C%AC%E6%A0%B7%E5%BC%8F.html"/>
+    <id>https://fuzui.net/bootstrap基本样式.html</id>
     <published>2019-04-20T16:00:28.000Z</published>
     <updated>2019-04-20T16:32:59.574Z</updated>
     
@@ -45,8 +45,8 @@
   
   <entry>
     <title>MongoDB复制集介绍及搭建</title>
-    <link href="https://fuzui.net/mongodb-replset.html"/>
-    <id>https://fuzui.net/mongodb-replset.html</id>
+    <link href="https://fuzui.net/MongoDB%E5%A4%8D%E5%88%B6%E9%9B%86%E4%BB%8B%E7%BB%8D%E5%8F%8A%E6%90%AD%E5%BB%BA.html"/>
+    <id>https://fuzui.net/MongoDB复制集介绍及搭建.html</id>
     <published>2019-04-19T15:17:23.000Z</published>
     <updated>2019-04-19T15:40:23.623Z</updated>
     
@@ -71,8 +71,8 @@
   
   <entry>
     <title>linux安装MongoDB4.0（centos7）</title>
-    <link href="https://fuzui.net/mongodb-install.html"/>
-    <id>https://fuzui.net/mongodb-install.html</id>
+    <link href="https://fuzui.net/linux%E5%AE%89%E8%A3%85MongoDB4.0.html"/>
+    <id>https://fuzui.net/linux安装MongoDB4.0.html</id>
     <published>2019-04-17T09:08:07.000Z</published>
     <updated>2019-04-17T09:36:13.624Z</updated>
     
@@ -99,8 +99,8 @@
   
   <entry>
     <title>mysql8.0安装以及主从复制搭建(linux)</title>
-    <link href="https://fuzui.net/mysql-master-slave.html"/>
-    <id>https://fuzui.net/mysql-master-slave.html</id>
+    <link href="https://fuzui.net/mysql8.0%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8A%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6%E6%90%AD%E5%BB%BA(linux).html"/>
+    <id>https://fuzui.net/mysql8.0安装以及主从复制搭建(linux).html</id>
     <published>2019-04-15T11:14:49.000Z</published>
     <updated>2019-04-15T11:18:22.713Z</updated>
     
@@ -128,8 +128,8 @@
   
   <entry>
     <title>基于SSM的学生信息管理系统(选课)</title>
-    <link href="https://fuzui.net/studentInfoManage-SSM.html"/>
-    <id>https://fuzui.net/studentInfoManage-SSM.html</id>
+    <link href="https://fuzui.net/%E5%9F%BA%E4%BA%8ESSM%E7%9A%84%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F(%E9%80%89%E8%AF%BE).html"/>
+    <id>https://fuzui.net/基于SSM的学生信息管理系统(选课).html</id>
     <published>2019-04-15T06:49:05.000Z</published>
     <updated>2019-04-15T12:13:06.202Z</updated>
     
@@ -150,8 +150,8 @@
   
   <entry>
     <title>linux(centos7)定时任务crontab</title>
-    <link href="https://fuzui.net/centos-crontab.html"/>
-    <id>https://fuzui.net/centos-crontab.html</id>
+    <link href="https://fuzui.net/linux%E5%AE%9A%E6%97%B6%E5%99%A8crontab.html"/>
+    <id>https://fuzui.net/linux定时器crontab.html</id>
     <published>2019-04-06T05:48:54.000Z</published>
     <updated>2019-04-06T06:03:25.100Z</updated>
     
@@ -178,8 +178,8 @@
   
   <entry>
     <title>HIVE的搭建配置及关联MySQL</title>
-    <link href="https://fuzui.net/hive.html"/>
-    <id>https://fuzui.net/hive.html</id>
+    <link href="https://fuzui.net/HIVE%E7%9A%84%E6%90%AD%E5%BB%BA%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%85%B3%E8%81%94MySQL.html"/>
+    <id>https://fuzui.net/HIVE的搭建配置及关联MySQL.html</id>
     <published>2019-04-03T07:37:58.000Z</published>
     <updated>2019-04-03T12:12:05.065Z</updated>
     
@@ -207,8 +207,8 @@
   
   <entry>
     <title>Hadoop从零开始搭建完全分布式</title>
-    <link href="https://fuzui.net/hadoop-fully-distributed.html"/>
-    <id>https://fuzui.net/hadoop-fully-distributed.html</id>
+    <link href="https://fuzui.net/Hadoop%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E5%AE%8C%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F.html"/>
+    <id>https://fuzui.net/Hadoop从零开始搭建完全分布式.html</id>
     <published>2019-03-27T15:34:48.000Z</published>
     <updated>2019-04-03T04:28:21.978Z</updated>
     
@@ -238,8 +238,8 @@
   
   <entry>
     <title>Hadoop搭建伪分布式</title>
-    <link href="https://fuzui.net/Hadoop-pseudo-distributed.html"/>
-    <id>https://fuzui.net/Hadoop-pseudo-distributed.html</id>
+    <link href="https://fuzui.net/Hadoop%E6%90%AD%E5%BB%BA%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F.html"/>
+    <id>https://fuzui.net/Hadoop搭建伪分布式.html</id>
     <published>2019-03-25T11:35:18.000Z</published>
     <updated>2019-03-26T09:08:46.153Z</updated>
     
@@ -267,8 +267,8 @@
   
   <entry>
     <title>linux下配置ftp（centos7）</title>
-    <link href="https://fuzui.net/linux-ftp-conf.html"/>
-    <id>https://fuzui.net/linux-ftp-conf.html</id>
+    <link href="https://fuzui.net/linux%E9%85%8D%E7%BD%AEftp.html"/>
+    <id>https://fuzui.net/linux配置ftp.html</id>
     <published>2019-03-25T06:49:51.000Z</published>
     <updated>2019-03-28T10:56:23.528Z</updated>
     
@@ -292,8 +292,8 @@
   
   <entry>
     <title>总结一些linux的基本命令</title>
-    <link href="https://fuzui.net/linuxCommand.html"/>
-    <id>https://fuzui.net/linuxCommand.html</id>
+    <link href="https://fuzui.net/linux%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93.html"/>
+    <id>https://fuzui.net/linux命令总结.html</id>
     <published>2019-03-14T02:56:32.000Z</published>
     <updated>2019-03-14T02:59:31.873Z</updated>
     
@@ -340,8 +340,8 @@
   
   <entry>
     <title>B/S基于springMVC的网上选课系统</title>
-    <link href="https://fuzui.net/onlineSC-springmvc.html"/>
-    <id>https://fuzui.net/onlineSC-springmvc.html</id>
+    <link href="https://fuzui.net/BS%E5%9F%BA%E4%BA%8EspringMVC%E7%9A%84%E7%BD%91%E4%B8%8A%E9%80%89%E8%AF%BE%E7%B3%BB%E7%BB%9F.html"/>
+    <id>https://fuzui.net/BS基于springMVC的网上选课系统.html</id>
     <published>2018-12-07T17:07:22.000Z</published>
     <updated>2019-03-25T06:07:10.846Z</updated>
     

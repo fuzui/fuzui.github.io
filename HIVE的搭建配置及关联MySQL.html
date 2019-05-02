@@ -82,7 +82,7 @@
 
 
 
-  <meta name="keywords" content="linux命令,">
+  <meta name="keywords" content="linux,hadoop,hive,">
 
 
 
@@ -95,18 +95,35 @@
 
 
 
-<meta name="description" content="简要一些基本的linux命令，我认为像这些命令之类的，必须要多谢多用才能熟记。 基本命令与解释1.mkdir        创建目录 -p    创建递归目录 2.touch        创建文件或修改文件时间 -a    仅修改读取时间（atime）  -m    仅修改修改时间（mtime）、  -d    两者都修改 3.cat        查看文件 -n    显示行号 4.less">
-<meta name="keywords" content="linux命令">
+<meta name="description" content="概念：  Hive是由Facebook实现并开源。是基于Hadoop的一个数据仓库工具，可以将结构化的数据映射为一张数据库表，并提供HQL（Hive SQL）查询功能。其底层数据时存储在HDFS上。Hive的本质是将SQL语句转换为MapReduce任务运行，使部署需MapReduce的用户很方便地利用HQL处理和计算HDFS上的结构化数据，使用于离线的批量数据计算。">
+<meta name="keywords" content="linux,hadoop,hive">
 <meta property="og:type" content="article">
-<meta property="og:title" content="总结一些linux的基本命令">
-<meta property="og:url" content="https://fuzui.net/linuxCommand.html">
+<meta property="og:title" content="HIVE的搭建配置及关联MySQL">
+<meta property="og:url" content="https://fuzui.net/HIVE的搭建配置及关联MySQL.html">
 <meta property="og:site_name" content="扶醉">
-<meta property="og:description" content="简要一些基本的linux命令，我认为像这些命令之类的，必须要多谢多用才能熟记。 基本命令与解释1.mkdir        创建目录 -p    创建递归目录 2.touch        创建文件或修改文件时间 -a    仅修改读取时间（atime）  -m    仅修改修改时间（mtime）、  -d    两者都修改 3.cat        查看文件 -n    显示行号 4.less">
+<meta property="og:description" content="概念：  Hive是由Facebook实现并开源。是基于Hadoop的一个数据仓库工具，可以将结构化的数据映射为一张数据库表，并提供HQL（Hive SQL）查询功能。其底层数据时存储在HDFS上。Hive的本质是将SQL语句转换为MapReduce任务运行，使部署需MapReduce的用户很方便地利用HQL处理和计算HDFS上的结构化数据，使用于离线的批量数据计算。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-14T02:59:31.873Z">
+<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190403160608.png">
+<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190403162230.png">
+<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190403163744.png">
+<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190403164248.png">
+<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190403165951.png">
+<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190403170217.png">
+<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190403182935.png">
+<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190403183816.png">
+<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190403190805.png">
+<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190403190031.png">
+<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190403190923.png">
+<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190403200116.png">
+<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190403193537.png">
+<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190403194307.png">
+<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190403194417.png">
+<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190403195629.png">
+<meta property="og:updated_time" content="2019-04-03T12:12:05.065Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="总结一些linux的基本命令">
-<meta name="twitter:description" content="简要一些基本的linux命令，我认为像这些命令之类的，必须要多谢多用才能熟记。 基本命令与解释1.mkdir        创建目录 -p    创建递归目录 2.touch        创建文件或修改文件时间 -a    仅修改读取时间（atime）  -m    仅修改修改时间（mtime）、  -d    两者都修改 3.cat        查看文件 -n    显示行号 4.less">
+<meta name="twitter:title" content="HIVE的搭建配置及关联MySQL">
+<meta name="twitter:description" content="概念：  Hive是由Facebook实现并开源。是基于Hadoop的一个数据仓库工具，可以将结构化的数据映射为一张数据库表，并提供HQL（Hive SQL）查询功能。其底层数据时存储在HDFS上。Hive的本质是将SQL语句转换为MapReduce任务运行，使部署需MapReduce的用户很方便地利用HQL处理和计算HDFS上的结构化数据，使用于离线的批量数据计算。">
+<meta name="twitter:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190403160608.png">
 
 
 
@@ -136,13 +153,13 @@
 
 
 
-  <link rel="canonical" href="https://fuzui.net/linuxCommand.html">
+  <link rel="canonical" href="https://fuzui.net/HIVE的搭建配置及关联MySQL.html">
 
 
 
 
 
-  <title>总结一些linux的基本命令 | 扶醉</title>
+  <title>HIVE的搭建配置及关联MySQL | 扶醉</title>
   
 
 
@@ -323,7 +340,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fuzui.net/linuxCommand.html">
+    <link itemprop="mainEntityOfPage" href="https://fuzui.net/HIVE的搭建配置及关联MySQL.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="王泽">
@@ -340,7 +357,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">总结一些linux的基本命令</h2>
+          <h2 class="post-title" itemprop="name headline">HIVE的搭建配置及关联MySQL</h2>
         
 
         <div class="post-meta">
@@ -352,8 +369,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-14T10:56:32+08:00">
-                2019-03-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-03T15:37:58+08:00">
+                2019-04-03
               </time>
             
 
@@ -375,8 +392,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index">
-                    <span itemprop="name">linux</span>
+                  <a href="/categories/hadoop/" itemprop="url" rel="index">
+                    <span itemprop="name">hadoop</span>
                   </a>
                 </span>
 
@@ -393,8 +410,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/linuxCommand.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/linuxCommand.html" itemprop="commentCount"></span>
+                <a href="/HIVE的搭建配置及关联MySQL.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/HIVE的搭建配置及关联MySQL.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -402,7 +419,7 @@
 
           
           
-             <span id="/linuxCommand.html" class="leancloud_visitors" data-flag-title="总结一些linux的基本命令">
+             <span id="/HIVE的搭建配置及关联MySQL.html" class="leancloud_visitors" data-flag-title="HIVE的搭建配置及关联MySQL">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -428,7 +445,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.1k
+                  1.6k
                 </span>
               
 
@@ -444,7 +461,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  7
                 </span>
               
             </div>
@@ -465,152 +482,101 @@
       
 
       
-        <h2 id="简要"><a href="#简要" class="headerlink" title="简要"></a>简要</h2><p>一些基本的linux命令，我认为像这些命令之类的，必须要多谢多用才能熟记。</p>
-<h4 id="基本命令与解释"><a href="#基本命令与解释" class="headerlink" title="基本命令与解释"></a>基本命令与解释</h4><p>1.<strong>mkdir</strong>        创建目录</p>
-<pre><code>-p    创建递归目录
-</code></pre><p>2.<strong>touch</strong>        创建文件或修改文件时间</p>
-<pre><code>-a    仅修改读取时间（atime）
-
--m    仅修改修改时间（mtime）、
-
--d    两者都修改
-</code></pre><p>3.<strong>cat</strong>        查看文件</p>
-<pre><code>-n    显示行号
-</code></pre><p>4.<strong>less</strong></p>
-<pre><code>more        分页查看
-</code></pre><p>5.<strong>head</strong>        从头查看</p>
-<p>6.<strong>tail</strong>        从后看</p>
-<pre><code>-f         实时查看日志文件
-</code></pre><p>7.<strong>grep</strong>        筛选，常配合管道使用</p>
-<pre><code>-n显示收集到信息的行号
-
--v用于反选信息
-</code></pre><p>8.<strong>wc</strong>        -l  统计行数、-w   字节数、-c  单词数</p>
-<p>9.<strong>du</strong>        查看大小</p>
-<p>10.<strong>cp  (旧)  (新) </strong>         复制</p>
-<p>11.<strong>mv  (旧)  (新)</strong>         剪切或重命名</p>
-<p>12.<strong>useradd</strong>        添加用户（只删除用户，目录保留，添加-r参数，用户目录都删除）</p>
-<pre><code>userdel 删除用户
-
-whoami 查询当前用户名称
-</code></pre><p>13.<strong>groupadd</strong>        添加用户组</p>
-<p>14.<strong>chmod [ugoa]+[rwx] 文件</strong></p>
-<pre><code>chmod ___ 文件        4r    2w    1x
-</code></pre><p>15.<strong>echo</strong>        输出</p>
-<p>16.<strong>date</strong>        用于显示及设置系统的时间或日期</p>
-<pre><code>-s “”设置时间
-</code></pre><p>17.<strong>reboot</strong>        重启系统</p>
-<p>18.<strong>poweroff</strong>        关闭系统</p>
-<p>19.<strong>wegt</strong>        下周网络文件</p>
-<pre><code>-p        下载到指定目录
-
--r        递归下载
-</code></pre><p>20.<strong>ps</strong>        查看系统中进程状态</p>
-<pre><code>-aux
-
-显示：R（运行）S（终端）D（不可中断）Z（僵死）T（停止）
-</code></pre><p>21.<strong>top</strong>        动态监视进程活动和系统负载信息</p>
-<pre><code>第一行：系统时间    运行时间    显示终端数    系统负载
-
-第二行：进程总数    运行中的进程数    睡眠中的进程数    停止的进程数    僵死的进程数
-
-第三行：（百分比）用户占用    系统内核占用    改变过优先级的进程    空闲的资源
-
-第四行：物理内存总量比    内存使用量    内存空闲量    作为内存缓存的内存量
-
-第五行：虚拟内存总量    虚拟内存使用量    虚拟内存空闲量    已被提前加载的内存量
-</code></pre><p>22.<strong>pidof</strong>        查询某个服务的pid值</p>
-<p>23.<strong>kill</strong>        用于终止某个指定pid的服务进程</p>
-<p>24.<strong>killall</strong>        终止某个指定名称的服务所对应的全部进程</p>
-<p>25.<strong>ifconfig</strong>        获取网咖配置与网络状态信息</p>
-<p>26.<strong>uanme</strong>        -a    查看系统内核与系统版本等信息</p>
-<p>27.<strong>uptime</strong>        查看系统的负载信息</p>
-<p>28.<strong>free</strong>        -h    显示当前系统中内存使用量情况</p>
-<p>29.<strong>who</strong>        查看登入主机的用户终端信息</p>
-<p>30.<strong>last</strong>        查看所有系统的登录记录</p>
-<p>31.<strong>history</strong>        显示历史执行过的命令    通过“!命令符号”执行某条命令</p>
-<pre><code>-c    清空
-</code></pre><p>32.<strong>sosreport</strong>        收集系统配置及架构信息并输出诊断文档</p>
-<p>33.<strong>pwd</strong>        显示当前目录</p>
-<p>32.<strong>cd</strong>        切换目录</p>
-<p>33.<strong>ls</strong>    ll        查看当前目录下的文件</p>
-<p>34.<strong>tr  (old) (new)</strong>    替换文件中的字符</p>
-<p>35.<strong>stat</strong>        查看文件具体存储信息和时间</p>
-<pre><code>access    modify    change
-</code></pre><p>36.<strong>cut</strong>        按列提取文本字符</p>
-<pre><code>-d    紧跟分隔符
-
--f    紧跟列号
-</code></pre><p>37.<strong>diff</strong>        比较多个文件文本的差异</p>
-<pre><code>--brief    判断文件是否相同
-
--c       显示文件具体的不同
-</code></pre><p>38.<strong>rm</strong>        删除</p>
-<pre><code>-f    无需二次确认
-
--rf    强制删除
-</code></pre><p>39.<strong>file</strong>        查看文件的类型</p>
-<p>40.<strong>tar</strong>        解压缩</p>
-<pre><code>一般压缩-czvf    一般解压-xzvf
-</code></pre><p>41.<strong>find</strong>        按照指定条件查找文件</p>
-<pre><code>-name
-
--user
-
--group   
-
--mtime -n +n        -n指n天以内，+n指n天以前
-
--atime -n +n
-
--ctime -n +n
-</code></pre><p>42.<strong>fdisk</strong>    -l    查看磁盘</p>
-<p>43.<strong>vim编辑器</strong></p>
-<pre><code>dd删除
-
-yy复制
-
-v撤销上一步操作
-
-p粘贴
-
-
-
-:w    q     wq     q!    wq!
-
-:set nu         显示行号
-
-:set nonu        不显示行号
-
-:命令            执行该命令
-
-:整数        跳转到该行
-</code></pre><p>44.<strong>crontab</strong>        定时任务</p>
-<pre><code>-e编辑    -l查询    -r删除当前用户的所有任务
-
-编辑格式
-
-        *    *    *    *    *
-
-    第一个：一小时内的第几分钟执行0-59
-
-    第二个：一天中的第几个小时执行0-23
-
-    第三个：一个月中第几天执行1-31
-
-    第四个：一年中当中的第几个月执行1-12
-
-    第五个：一周当中星期几执行0-7（0和7都是周日）
-
-特殊符号
-
-    * 任何时间    ，多个时间分割       - 连续时间    */n每个n执行一次
-
-无效服务时重启定时服务
-
-service crond restart
-</code></pre><p>45.<strong>sync</strong>     将内存数据同步到磁盘，关机重启都应该执行</p>
-<hr>
+        <p><strong>概念：</strong></p>
+<blockquote>
+<p>Hive是由Facebook实现并开源。是基于Hadoop的一个数据仓库工具，可以将结构化的数据映射为一张数据库表，并提供HQL（Hive SQL）查询功能。其底层数据时存储在HDFS上。Hive的本质是将SQL语句转换为MapReduce任务运行，使部署需MapReduce的用户很方便地利用HQL处理和计算HDFS上的结构化数据，使用于离线的批量数据计算。</p>
+</blockquote>
+<a id="more"></a>
+<h4 id="一、下载"><a href="#一、下载" class="headerlink" title="一、下载"></a>一、下载</h4><p><strong>前提：</strong> 配置好hadoop分布式环境，我在上一篇博文写到<a href="https://fuzui.net/2019/03/27/hadoop-fully-distributed/">Hadoop从零开始搭建完全分布式</a>。</p>
+<p>官网下载hive，这里我用hive-1.2.2版本：官网下载地址：<a href="http://mirrors.shu.edu.cn/apache/hive/hive-1.2.2/" target="_blank" rel="noopener">http://mirrors.shu.edu.cn/apache/hive/hive-1.2.2/</a></p>
+<p>我这里选择下载到本地然后通过xftp上传到虚拟机上。<br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190403160608.png" alt></p>
+<p>解压：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf apache-hive-1.2.2-bin.tar.gz</span><br></pre></td></tr></table></figure></p>
+<p>重命名<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv apache-hive-1.2.2-bin hive-1.2.2</span><br></pre></td></tr></table></figure></p>
+<h4 id="二、配置"><a href="#二、配置" class="headerlink" title="二、配置"></a>二、配置</h4><p>（1）配置环境变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/profile</span><br></pre></td></tr></table></figure></p>
+<p>将以下添加在末尾<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export HIVE_HOME=/software/hive-1.2.2</span><br><span class="line">PAHT=$PATH:$HIVE_HOME/bin</span><br></pre></td></tr></table></figure></p>
+<p>刷新<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure></p>
+<p>查看<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190403162230.png" alt><br>（2）配置文件<br>修改software/hive-1.2.2/conf/hive-env.sh.template为hive-env.sh。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /software/hive-1.2.2/conf/</span><br><span class="line">cp hive-env.sh.template hive-env.sh</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>配置HADOOP_HOME=/Hadoop所在路径</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export HADOOP_HOME=/software/hadoop2.7.2</span><br></pre></td></tr></table></figure>
+<ul>
+<li>配置HIVE_CONF_DIR=/Hive中conf文件夹路径<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export HIVE_CONF_DIR=/software/hive-1.2.2/conf</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="三、启动"><a href="#三、启动" class="headerlink" title="三、启动"></a>三、启动</h4><p>（1）启动HDFS<br>在hadoop01机上<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start-dfs.sh</span><br></pre></td></tr></table></figure></p>
+<p>（2）启动YARN<br>在hadoop02机上<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start-yarn.sh</span><br></pre></td></tr></table></figure></p>
+<p>通过jps检测启动情况<br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190403163744.png" alt><br>（3）在HDFS上创建/tmp和/user/hive/warehouse<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hadoop fs -mkdir /tmp</span><br><span class="line">hadoop fs -mkdir -p /user/hive/warehouse</span><br></pre></td></tr></table></figure></p>
+<p>（4）修改文件夹权限，同组可写<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hadoop fs -chmod 775 /tmp</span><br><span class="line">hadoop fs -chmod 775 /user/hive/warehouse</span><br></pre></td></tr></table></figure></p>
+<p>（5）启动Hive<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hive</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190403164248.png" alt></p>
+<h4 id="四、hive基本操作"><a href="#四、hive基本操作" class="headerlink" title="四、hive基本操作"></a>四、hive基本操作</h4><p>1.基本操作(语法类似于MySQL)<br>2.显示所有数据库：show databases;<br>3.使用数据库(默认数据库default):use 数据库名;<br>4.显示使用数据库下所有表:show tables;<br>5.创建表:create table 表名(字段1 类型,字段2 类型…)<br>6.插入数据(map reduce):insert into 表名 (字段1,字段2…) values (数据1,数据2…)<br>7.查询数据:select 字段 from 表名;<br>8.删除表:drop table 表名;<br>9.退出:exit</p>
+<h4 id="五、安装mysql"><a href="#五、安装mysql" class="headerlink" title="五、安装mysql"></a>五、安装mysql</h4><h5 id="1-卸载Mariadb"><a href="#1-卸载Mariadb" class="headerlink" title="1. 卸载Mariadb"></a>1. 卸载Mariadb</h5><p>CentOS7自带的是 Mariadb<br>（1）查找<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa|grep mariadb</span><br></pre></td></tr></table></figure></p>
+<p>（2）删除<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -e --nodeps 上面查出来的文件名</span><br></pre></td></tr></table></figure></p>
+<p>（3）删除配置文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm /etc/my.cnf</span><br></pre></td></tr></table></figure></p>
+<h5 id="2-下载mysql-8-0"><a href="#2-下载mysql-8-0" class="headerlink" title="2.下载mysql 8.0"></a>2.下载mysql 8.0</h5><p>这里我通过rpm安装<br>官网下载：<a href="https://dev.mysql.com/downloads/file/?id=484537" target="_blank" rel="noopener">mysql8.0.15</a><br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190403165951.png" alt><br>（1）解压<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xvf mysql-8.0.15-1.el7.x86_64.rpm-bundle.tar</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190403170217.png" alt><br>（2）安装<br>解决一些依赖<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">yum -y install numactl    </span><br><span class="line">yum -y install libaio.so.1 libgcc_s.so.1 libstdc++.so.6</span><br><span class="line">yum update libstdc++-4.4.7-4.el6.x86_64</span><br><span class="line">yum search libaio</span><br><span class="line">yum install libaio</span><br><span class="line">yum install net-tools</span><br><span class="line">yum install openssl-devel</span><br></pre></td></tr></table></figure></p>
+<p>按次序安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh MySQL-client-5.6.43-1.el7.x86_64.rpmrpm -ivh mysql-community-common-8.0.15-1.el7.x86_64.rpm</span><br><span class="line">rpm -ivh mysql-community-libs-8.0.15-1.el7.x86_64.rpm</span><br><span class="line">rpm -ivh mysql-community-client-8.0.15-1.el7.x86_64.rpm</span><br><span class="line">rpm -ivh mysql-community-server-8.0.15-1.el7.x86_64.rpm</span><br></pre></td></tr></table></figure></p>
+<p>（3）初始化<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld --initialize --user=mysql --basedir=/usr --datadir=/var/lib/mysql</span><br></pre></td></tr></table></figure></p>
+<p>（4）启动<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start mysqld</span><br></pre></td></tr></table></figure></p>
+<p>（5）修改密码</p>
+<ul>
+<li>编辑配置文件<br>vim /etc/my.cnf<br>在[mysqld]下添加skip-grant-tables<br>保存退出</li>
+<li>重启mysql服务<br>systemctl restart mysqld</li>
+<li>通过mysql -uroot -p<br>登录，密码直接回车即可</li>
+<li>选择mysql数据库<br>use mysql;</li>
+<li>将默认密码清空<br>update user set authentication_string=’’ where user=’root’;<br>exit命令退出</li>
+<li>删除 /etc/my.cnf 文件刚刚添加的 skip-grant-tables<br>vim /etc/my.cnf<br>选中skip-grant-tables所在行按两下d键即可删除<br>保存退出</li>
+<li>重启mysql服务<br>systemctl restart mysqld</li>
+<li>再次登录<br>mysql -uroot -p<br>登录，密码直接回车即可</li>
+<li>设置密码（我这里将密码设为root）<br>选择mysql数据库<br>use mysql;<br>ALTER user ‘root‘@’localhost’ IDENTIFIED BY ‘root’;</li>
+<li>设置远程访问<br>update user set host=’%’ where user=’root’;</li>
+<li>重启<br>exit退出<br>重启服务systemctl restart mysqld<br>重新通过mysql -uroot -proot登录</li>
+<li>远程连接<br>我通过navicat远程连接，<br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190403182935.png" alt></li>
+<li>设置开机启动<br>systemctl enable mysqld</li>
+</ul>
+<p>至此，mysql安装完成。</p>
+<h4 id="六、hive关联mysql"><a href="#六、hive关联mysql" class="headerlink" title="六、hive关联mysql"></a>六、hive关联mysql</h4><h5 id="1-下载驱动jar"><a href="#1-下载驱动jar" class="headerlink" title="1.下载驱动jar"></a>1.下载驱动jar</h5><p>我安装的是mysql8.0.15版本，我找对应版本的jar<br>平时个人比较喜欢到mvnrepository去找jar，附上地址：<a href="https://mvnrepository.com/artifact/mysql/mysql-connector-java/8.0.15" target="_blank" rel="noopener">https://mvnrepository.com/artifact/mysql/mysql-connector-java/8.0.15</a></p>
+<p>将下载好的jar放到hadoop01虚拟机中hive安装目录的lib文件夹下<br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190403183816.png" alt></p>
+<h5 id="2-配置hive-site-xml"><a href="#2-配置hive-site-xml" class="headerlink" title="2.配置hive-site.xml"></a>2.配置hive-site.xml</h5><p>创建hive-site.xml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /software/hive-1.2.2/conf</span><br><span class="line">vim hive-site.xml</span><br></pre></td></tr></table></figure></p>
+<p>将以下添加进去（灵活应变）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;configuration&gt;</span><br><span class="line">        &lt;property&gt;</span><br><span class="line">                &lt;name&gt;javax.jdo.option.ConnectionURL&lt;/name&gt;</span><br><span class="line">                &lt;value&gt;jdbc:mysql://192.168.17.134:3306/myhive?createDatabaseIfNotExist=true&lt;/value&gt;</span><br><span class="line">        &lt;/property&gt;</span><br><span class="line">        &lt;property&gt;</span><br><span class="line">                &lt;name&gt;javax.jdo.option.ConnectionDriverName&lt;/name&gt;</span><br><span class="line">                &lt;value&gt;com.mysql.cj.jdbc.Driver&lt;/value&gt;</span><br><span class="line">        &lt;/property&gt;</span><br><span class="line">        &lt;property&gt;</span><br><span class="line">                &lt;name&gt;javax.jdo.option.ConnectionUserName&lt;/name&gt;</span><br><span class="line">                &lt;value&gt;root&lt;/value&gt;</span><br><span class="line">        &lt;/property&gt;</span><br><span class="line">        &lt;property&gt;</span><br><span class="line">                &lt;name&gt;javax.jdo.option.ConnectionPassword&lt;/name&gt;</span><br><span class="line">                &lt;value&gt;root&lt;/value&gt;</span><br><span class="line"> &lt;/property&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure></p>
+<h5 id="3-重启整个集群"><a href="#3-重启整个集群" class="headerlink" title="3.重启整个集群"></a>3.重启整个集群</h5><p>（1）在Hadoop02上<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stop-yarn.sh</span><br></pre></td></tr></table></figure></p>
+<p>（2）在Hadoop01上<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stop-dfs.sh</span><br></pre></td></tr></table></figure></p>
+<p>（3）在Hadoop01上<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start-dfs.sh</span><br></pre></td></tr></table></figure></p>
+<p>（4）在Hadoop02上<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start-yarn.sh</span><br></pre></td></tr></table></figure></p>
+<p>（5）在Hadoop01上重启mysql<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart mysqld</span><br></pre></td></tr></table></figure></p>
+<h5 id="4-启动"><a href="#4-启动" class="headerlink" title="4.启动"></a>4.启动</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hive</span><br></pre></td></tr></table></figure>
+<p><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190403190805.png" alt><br>启动完成后用navicat查看发现已经自动创建了myhive数据库。<br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190403190031.png" alt><br>也可以通过命令行查看<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -proot</span><br><span class="line">show databases;</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190403190923.png" alt></p>
+<h5 id="5-其他配置（看需求）"><a href="#5-其他配置（看需求）" class="headerlink" title="5.其他配置（看需求）"></a>5.其他配置（看需求）</h5><p>hive-site.xml中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#数据库存放位置</span><br><span class="line">&lt;property&gt;</span><br><span class="line">&lt;name&gt;hive.metastore.warehouse.dir&lt;/name&gt; </span><br><span class="line">&lt;value&gt;/user/hive/warehouse&lt;/value&gt;</span><br><span class="line">&lt;description&gt;location of default database for the warehouse&lt;/description&gt; </span><br><span class="line">&lt;/property&gt; </span><br><span class="line">#查询时显示字段名称和数据库名</span><br><span class="line">&lt;property&gt; </span><br><span class="line">&lt;name&gt;hive.cli.print.header&lt;/name&gt;</span><br><span class="line">&lt;value&gt;true&lt;/value&gt; </span><br><span class="line">&lt;/property&gt; </span><br><span class="line">&lt;property&gt; </span><br><span class="line">&lt;name&gt;hive.cli.print.current.db&lt;/name&gt;</span><br><span class="line"> &lt;value&gt;true&lt;/value&gt; </span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="七、测试"><a href="#七、测试" class="headerlink" title="七、测试"></a>七、测试</h4><p>（1）进入数据库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">create database fuzui;</span><br><span class="line">use fuzui;</span><br></pre></td></tr></table></figure></p>
+<p>（2）创建表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">create table student(</span><br><span class="line">    id int, </span><br><span class="line">    name string, </span><br><span class="line">    age int, </span><br><span class="line">    sex string)</span><br><span class="line">row format delimited fields terminated by &apos;,&apos;;</span><br></pre></td></tr></table></figure>
+<p>在mysql中会看到创建这个表的字段信息<br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190403200116.png" alt><br>（3）退出hive<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exit</span><br></pre></td></tr></table></figure></p>
+<p>（4）创建本地文件上传到HDFS</p>
+<p><1>我直接用的root用户，所以我在root目录下创建<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /root</span><br><span class="line">vim fz.txt</span><br></pre></td></tr></table></figure></1></p>
+<p>添加如下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">201501,wangze,22,man</span><br><span class="line">201502,wangchen,20,man</span><br><span class="line">201503,liyu,20,woman</span><br><span class="line">201504,zhangna,21,woman</span><br><span class="line">201505,songxin,19,woman</span><br><span class="line">201506,changyi,18,man</span><br><span class="line">201507,liuni,20,woman</span><br><span class="line">201508,zhaoming,22,man</span><br></pre></td></tr></table></figure></p>
+<p>保存退出</p>
+<p><2>上传hdfs</2></p>
+<ul>
+<li>创建文件夹<br><code>hadoop fs -mkdir /myhive</code></li>
+<li>上传<br><code>hadoop fs -put /root/fz.txt /myhive</code></li>
+<li>查看<br><code>hadoop fs -cat /myhive/fz.txt</code><br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190403193537.png" alt><br>（5）进入hive<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hive</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>（6）导入hive表</p>
+<ul>
+<li>进入数据库<br>  <code>use fuzui</code></li>
+<li><p>导入<br><code>load data inpath &#39;/myhive/fz.txt&#39; into table student;</code><br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190403194307.png" alt></p>
+</li>
+<li><p>查看数据<br><code>select * from student;</code><br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190403194417.png" alt></p>
+</li>
+<li><p>稍微复杂点的查询<br>查询最小的女生多少岁<br><code>select min(age) from student where sex = &#39;woman&#39;;</code><br>这时，就开始一系列运行了，速度会慢。</p>
+</li>
+</ul>
+<p><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190403195629.png" alt></p>
+<p><strong><em>==至此，HIVE搭建成功！==</em></strong></p>
 
       
     </div>
@@ -646,7 +612,11 @@ service crond restart
       
         <div class="post-tags">
           
-            <a href="/tags/linux命令/" rel="tag"><i class="fa fa-tag"></i> linux命令</a>
+            <a href="/tags/linux/" rel="tag"><i class="fa fa-tag"></i> linux</a>
+          
+            <a href="/tags/hadoop/" rel="tag"><i class="fa fa-tag"></i> hadoop</a>
+          
+            <a href="/tags/hive/" rel="tag"><i class="fa fa-tag"></i> hive</a>
           
         </div>
       
@@ -659,8 +629,8 @@ service crond restart
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/hello-world.html" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/Hadoop从零开始搭建完全分布式.html" rel="next" title="Hadoop从零开始搭建完全分布式">
+                <i class="fa fa-chevron-left"></i> Hadoop从零开始搭建完全分布式
               </a>
             
           </div>
@@ -669,8 +639,8 @@ service crond restart
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/linux-ftp-conf.html" rel="prev" title="linux下配置ftp（centos7）">
-                linux下配置ftp（centos7） <i class="fa fa-chevron-right"></i>
+              <a href="/linux定时器crontab.html" rel="prev" title="linux(centos7)定时任务crontab">
+                linux(centos7)定时任务crontab <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -859,7 +829,7 @@ service crond restart
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简要"><span class="nav-text">简要</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本命令与解释"><span class="nav-text">基本命令与解释</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、下载"><span class="nav-text">一、下载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、配置"><span class="nav-text">二、配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、启动"><span class="nav-text">三、启动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四、hive基本操作"><span class="nav-text">四、hive基本操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#五、安装mysql"><span class="nav-text">五、安装mysql</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-卸载Mariadb"><span class="nav-text">1. 卸载Mariadb</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-下载mysql-8-0"><span class="nav-text">2.下载mysql 8.0</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#六、hive关联mysql"><span class="nav-text">六、hive关联mysql</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-下载驱动jar"><span class="nav-text">1.下载驱动jar</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-配置hive-site-xml"><span class="nav-text">2.配置hive-site.xml</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-重启整个集群"><span class="nav-text">3.重启整个集群</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-启动"><span class="nav-text">4.启动</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-其他配置（看需求）"><span class="nav-text">5.其他配置（看需求）</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#七、测试"><span class="nav-text">七、测试</span></a></li></ol></div>
             
 
           </div>
