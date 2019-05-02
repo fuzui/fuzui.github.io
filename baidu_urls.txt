@@ -1,0 +1,13 @@
+https://fuzui.net/bootstrap基本样式.html
+https://fuzui.net/MongoDB复制集介绍及搭建.html
+https://fuzui.net/linux安装MongoDB4.0.html
+https://fuzui.net/mysql8.0安装以及主从复制搭建(linux).html
+https://fuzui.net/基于SSM的学生信息管理系统(选课).html
+https://fuzui.net/linux定时器crontab.html
+https://fuzui.net/HIVE的搭建配置及关联MySQL.html
+https://fuzui.net/Hadoop从零开始搭建完全分布式.html
+https://fuzui.net/Hadoop搭建伪分布式.html
+https://fuzui.net/linux配置ftp.html
+https://fuzui.net/linux命令总结.html
+https://fuzui.net/hello-world.html
+https://fuzui.net/BS基于springMVC的网上选课系统.html
