@@ -82,7 +82,7 @@
 
 
 
-  <meta name="keywords" content="linux,crontab,">
+  <meta name="keywords" content="安装类，MongoDB,">
 
 
 
@@ -95,18 +95,29 @@
 
 
 
-<meta name="description" content="百度百科：crontab命令常见于Unix和类Unix的操作系统之中，用于设置周期性被执行的指令。该命令从标准输入设备读取指令，并将其存放于“crontab”文件中，以供之后读取和执行。该词来源于希腊语 chronos(χρνο)，原意是时间。通常，crontab储存的指令被守护进程激活， crond常常在后台运行，每一分钟检查是否有预定的作业需要执行。这类作业一般称为cron jobs。  在">
-<meta name="keywords" content="linux,crontab">
+<meta name="description" content="MongoDB4.0安装 MongoDB 配置用户和密码验证 远程连接MongoDB">
+<meta name="keywords" content="安装类，MongoDB">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux(centos7)定时任务crontab">
-<meta property="og:url" content="http://yoursite.com/2019/04/06/centos-crontab/index.html">
+<meta property="og:title" content="linux安装MongoDB4.0（centos7）">
+<meta property="og:url" content="https://fuzui.net/mongodb-install.html">
 <meta property="og:site_name" content="扶醉">
-<meta property="og:description" content="百度百科：crontab命令常见于Unix和类Unix的操作系统之中，用于设置周期性被执行的指令。该命令从标准输入设备读取指令，并将其存放于“crontab”文件中，以供之后读取和执行。该词来源于希腊语 chronos(χρνο)，原意是时间。通常，crontab储存的指令被守护进程激活， crond常常在后台运行，每一分钟检查是否有预定的作业需要执行。这类作业一般称为cron jobs。  在">
+<meta property="og:description" content="MongoDB4.0安装 MongoDB 配置用户和密码验证 远程连接MongoDB">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-06T06:03:25.100Z">
+<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190417163444.png">
+<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190417164057.png">
+<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190417164501.png">
+<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190417164725.png">
+<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/$PE@Q7]7T~E]PPG%W`%6G59.png">
+<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/GFA@R3BFTAV[O_0[$OV~S$G.png">
+<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190417165508.png">
+<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190417165631.png">
+<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190417170126.png">
+<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190417170229.png">
+<meta property="og:updated_time" content="2019-04-17T09:36:13.624Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linux(centos7)定时任务crontab">
-<meta name="twitter:description" content="百度百科：crontab命令常见于Unix和类Unix的操作系统之中，用于设置周期性被执行的指令。该命令从标准输入设备读取指令，并将其存放于“crontab”文件中，以供之后读取和执行。该词来源于希腊语 chronos(χρνο)，原意是时间。通常，crontab储存的指令被守护进程激活， crond常常在后台运行，每一分钟检查是否有预定的作业需要执行。这类作业一般称为cron jobs。  在">
+<meta name="twitter:title" content="linux安装MongoDB4.0（centos7）">
+<meta name="twitter:description" content="MongoDB4.0安装 MongoDB 配置用户和密码验证 远程连接MongoDB">
+<meta name="twitter:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190417163444.png">
 
 
 
@@ -136,13 +147,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/06/centos-crontab/">
+  <link rel="canonical" href="https://fuzui.net/mongodb-install.html">
 
 
 
 
 
-  <title>linux(centos7)定时任务crontab | 扶醉</title>
+  <title>linux安装MongoDB4.0（centos7） | 扶醉</title>
   
 
 
@@ -179,7 +190,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">fuzui.net</p>
+        <h1 class="site-subtitle" itemprop="description"><center>当你的才华还撑不起你的野心的时候，<br>你就应该静下心来学习。<br>当你的能力还驾驭不了你的目标时，<br>就应该沉下心来历练。</center></h1>
       
   </div>
 
@@ -323,7 +334,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/06/centos-crontab/">
+    <link itemprop="mainEntityOfPage" href="https://fuzui.net/mongodb-install.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="王泽">
@@ -340,7 +351,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">linux(centos7)定时任务crontab</h1>
+          <h2 class="post-title" itemprop="name headline">linux安装MongoDB4.0（centos7）</h2>
         
 
         <div class="post-meta">
@@ -352,8 +363,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-06T13:48:54+08:00">
-                2019-04-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-17T17:08:07+08:00">
+                2019-04-17
               </time>
             
 
@@ -375,8 +386,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index">
-                    <span itemprop="name">linux</span>
+                  <a href="/categories/安装类/" itemprop="url" rel="index">
+                    <span itemprop="name">安装类</span>
                   </a>
                 </span>
 
@@ -393,8 +404,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/04/06/centos-crontab/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/06/centos-crontab/" itemprop="commentCount"></span>
+                <a href="/mongodb-install.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/mongodb-install.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -402,7 +413,7 @@
 
           
           
-             <span id="/2019/04/06/centos-crontab/" class="leancloud_visitors" data-flag-title="linux(centos7)定时任务crontab">
+             <span id="/mongodb-install.html" class="leancloud_visitors" data-flag-title="linux安装MongoDB4.0（centos7）">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -428,7 +439,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  197
+                  444
                 </span>
               
 
@@ -465,18 +476,50 @@
       
 
       
-        <blockquote>
-<p>百度百科：crontab命令常见于Unix和类Unix的操作系统之中，用于设置周期性被执行的指令。该命令从标准输入设备读取指令，并将其存放于“crontab”文件中，以供之后读取和执行。该词来源于希腊语 chronos(χρνο)，原意是时间。通常，crontab储存的指令被守护进程激活， crond常常在后台运行，每一分钟检查是否有预定的作业需要执行。这类作业一般称为cron jobs。</p>
-</blockquote>
-<p><em>在centos7中：</em><br><strong>启动</strong><br><code>systemctl start crond</code></p>
-<p><strong>停止</strong><br><code>systemctl stop crond</code></p>
-<p><strong>重启</strong><br><code>systemctl restart crond</code></p>
-<p><strong>编辑</strong><br><code>crontab -e</code></p>
-<p><strong>删除</strong><br><code>crontab -r</code></p>
-<p><strong>添加任务</strong></p>
-<p><code>* * * * * command</code><br><em>表示分钟1-59  每分钟用 </em>/1 表示<br><em>表示小时1-23
-</em>表示日期1-31<br><em>表示月份1-12
-</em>表示星期0-6</p>
+        <hr>
+<ul>
+<li>MongoDB4.0安装</li>
+<li>MongoDB 配置用户和密码验证</li>
+<li>远程连接MongoDB</li>
+</ul>
+<hr>
+<a id="more"></a>
+<h4 id="1-配置包管理系统（yum）"><a href="#1-配置包管理系统（yum）" class="headerlink" title="1. 配置包管理系统（yum）"></a>1. 配置包管理系统（yum）</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[mongodb-org-4.0] </span><br><span class="line">name = MongoDB Repository </span><br><span class="line">baseurl = https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/4.0/x86_64/ </span><br><span class="line">gpgcheck = 1 </span><br><span class="line">enabled = 1 </span><br><span class="line">gpgkey = https：// www.mongodb.org/static/pgp/server-4.0.asc</span><br></pre></td></tr></table></figure>
+<h4 id="2-安装MongoDB"><a href="#2-安装MongoDB" class="headerlink" title="2. 安装MongoDB"></a>2. 安装MongoDB</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install -y mongodb-org</span><br></pre></td></tr></table></figure>
+<h4 id="3-启动MongoDB"><a href="#3-启动MongoDB" class="headerlink" title="3.启动MongoDB"></a>3.启动MongoDB</h4><p>启动：<code>systemctl start mongod</code><br>停止：<code>systemctl stop mongod</code><br>重启：<code>systemctl restart mongod</code><br>开机启动：<code>systemctl enable mongod.service</code></p>
+<h4 id="4-进入MongoDB"><a href="#4-进入MongoDB" class="headerlink" title="4.进入MongoDB"></a>4.进入MongoDB</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongo</span><br></pre></td></tr></table></figure>
+<h4 id="5-设置验证（账户密码）"><a href="#5-设置验证（账户密码）" class="headerlink" title="5.设置验证（账户密码）"></a>5.设置验证（账户密码）</h4><p>(1) 进入MongoDB<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongo</span><br></pre></td></tr></table></figure></p>
+<p>(2) 进入admin数据库<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use admin</span><br></pre></td></tr></table></figure></p>
+<p>(3) 创建<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.createUser(&#123;user:"root",pwd:"root",roles:["root"]&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>(4) 退出<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exit</span><br></pre></td></tr></table></figure></p>
+<p>(5) 修改配置文件<br><code>vim /etc/mongod.conf</code><br>修改：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">security：</span><br><span class="line">    authorization: enabled</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190417163444.png" alt></p>
+<font color="red">原本sercurity是被注释掉的，需要把前面#删除，而authorization也是不存在的，需要手动添加。</font>
+
+<p>(6) 重启<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart mongod</span><br></pre></td></tr></table></figure></p>
+<p>(7)验证<br>使用mongo进入MongoDB之后，使用show dbs是没有反应的，需要先进入admin数据库，持行<code>db.auth(&quot;root&quot;,&quot;root&quot;)</code>后，才可以使用。<br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190417164057.png" alt></p>
+<h4 id="6-远程连接"><a href="#6-远程连接" class="headerlink" title="6.远程连接"></a>6.远程连接</h4><p>(1) 关闭防火墙<br><code>systemctl stop firewalld</code><br>可以使其开机关闭：<code>systemctl disable firewalld</code><br>(2) 修改配置文件<br><code>vim /etc/mongod.conf</code><br>修改：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bindIp: 0.0.0.0</span><br></pre></td></tr></table></figure></p>
+<p> 原来bindIp是127.0.0.1，需要改为0.0.0.0<br> <img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190417164501.png" alt></p>
+<p>(3) 重启MongoDB<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart mongod</span><br></pre></td></tr></table></figure></p>
+<p>(4)    连接<br>我这里用的 Navicat 12 for MongoDB<br>工具都差不多</p>
+<ul>
+<li><p>新建：<br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190417164725.png" alt></p>
+</li>
+<li><p>输入信息：这里填写centos7的ip和MongoDB的admin数据库和刚刚设置过的账号密码<br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/$PE@Q7]7T~E]PPG%W`%6G59.png" alt></p>
+</li>
+<li><p>建立ssh：这里填写centos7的ip和其登录的用户（我直接用的root）<br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/GFA@R3BFTAV[O_0[$OV~S$G.png" alt></p>
+</li>
+</ul>
+<ul>
+<li>测试连接<br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190417165508.png" alt></li>
+</ul>
+<p>最后就可以查看了，默认的数据库是看不到的，所以我这里创了个新数据库<br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190417165631.png" alt><br>linux中：<br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190417170126.png" alt><br>再通过图形界面查看：<br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190417170229.png" alt></p>
+<p><br></p>
+<p>参考：</p>
+<ul>
+<li><a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-red-hat/" target="_blank" rel="noopener">MongoDB官方安装</a></li>
+<li><a href="https://blog.csdn.net/qq_26896281/article/details/81206492" target="_blank" rel="noopener">MongoDB4.0.0 远程连接及用户名密码认证登陆配置——windows</a></li>
+</ul>
 
       
     </div>
@@ -512,9 +555,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/linux/" rel="tag"><i class="fa fa-tag"></i> linux</a>
-          
-            <a href="/tags/crontab/" rel="tag"><i class="fa fa-tag"></i> crontab</a>
+            <a href="/tags/安装类，MongoDB/" rel="tag"><i class="fa fa-tag"></i> 安装类，MongoDB</a>
           
         </div>
       
@@ -527,8 +568,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/03/hive/" rel="next" title="HIVE的搭建配置及关联MySQL">
-                <i class="fa fa-chevron-left"></i> HIVE的搭建配置及关联MySQL
+              <a href="/mysql-master-slave.html" rel="next" title="mysql8.0安装以及主从复制搭建(linux)">
+                <i class="fa fa-chevron-left"></i> mysql8.0安装以及主从复制搭建(linux)
               </a>
             
           </div>
@@ -537,8 +578,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/04/15/studentInfoManage-SSM/" rel="prev" title="基于SSM的学生信息管理系统(选课)">
-                基于SSM的学生信息管理系统(选课) <i class="fa fa-chevron-right"></i>
+              <a href="/mongodb-replset.html" rel="prev" title="MongoDB复制集介绍及搭建">
+                MongoDB复制集介绍及搭建 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -594,15 +635,24 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image" src="/images/mytra.png" alt="王泽">
             
               <p class="site-author-name" itemprop="name">王泽</p>
-              <p class="site-description motion-element" itemprop="description"><center>当你的才华还撑不起你的野心的时候，<br>你就应该静下心来学习。<br>当你的能力还驾驭不了你的目标时，<br>就应该沉下心来历练。</center></p>
+              <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
           <nav class="site-state motion-element">
@@ -708,6 +758,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-配置包管理系统（yum）"><span class="nav-text">1. 配置包管理系统（yum）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-安装MongoDB"><span class="nav-text">2. 安装MongoDB</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-启动MongoDB"><span class="nav-text">3.启动MongoDB</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-进入MongoDB"><span class="nav-text">4.进入MongoDB</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-设置验证（账户密码）"><span class="nav-text">5.设置验证（账户密码）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-远程连接"><span class="nav-text">6.远程连接</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1382,6 +1448,21 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
   

@@ -82,7 +82,7 @@
 
 
 
-  <meta name="keywords" content="项目,">
+  <meta name="keywords" content="linux,hadoop,">
 
 
 
@@ -95,24 +95,18 @@
 
 
 
-<meta name="description" content="项目简介：由SpringMVC+MyBatis为主要框架，mysql8.0配置主从复制实现读写分离，主机丛机分别为腾讯云的服务器，而项目部署在阿里云上。前端主要由bootstrap完成，背景用particles.js插件。数据库交互查询用到pagehelper分页。在添加修改相关功能时通过ajax来验证其主键是否存在可用。代码层次清晰，输入框约束较高，已配置登录拦截。">
-<meta name="keywords" content="项目">
+<meta name="description" content="==概念== 海量、高增长、多样化的信息数据有三大发行版本  Apache、CDH、HDP">
+<meta name="keywords" content="linux,hadoop">
 <meta property="og:type" content="article">
-<meta property="og:title" content="基于SSM的学生信息管理系统(选课)">
-<meta property="og:url" content="http://yoursite.com/2019/04/15/studentInfoManage-SSM/index.html">
+<meta property="og:title" content="Hadoop搭建伪分布式">
+<meta property="og:url" content="https://fuzui.net/Hadoop-pseudo-distributed.html">
 <meta property="og:site_name" content="扶醉">
-<meta property="og:description" content="项目简介：由SpringMVC+MyBatis为主要框架，mysql8.0配置主从复制实现读写分离，主机丛机分别为腾讯云的服务器，而项目部署在阿里云上。前端主要由bootstrap完成，背景用particles.js插件。数据库交互查询用到pagehelper分页。在添加修改相关功能时通过ajax来验证其主键是否存在可用。代码层次清晰，输入框约束较高，已配置登录拦截。">
+<meta property="og:description" content="==概念== 海量、高增长、多样化的信息数据有三大发行版本  Apache、CDH、HDP">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190414000551.png">
-<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190415162534.png">
-<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/1555316814587.png">
-<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190415162832.png">
-<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190415164959.png">
-<meta property="og:updated_time" content="2019-04-15T12:13:06.202Z">
+<meta property="og:updated_time" content="2019-03-26T09:08:46.153Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="基于SSM的学生信息管理系统(选课)">
-<meta name="twitter:description" content="项目简介：由SpringMVC+MyBatis为主要框架，mysql8.0配置主从复制实现读写分离，主机丛机分别为腾讯云的服务器，而项目部署在阿里云上。前端主要由bootstrap完成，背景用particles.js插件。数据库交互查询用到pagehelper分页。在添加修改相关功能时通过ajax来验证其主键是否存在可用。代码层次清晰，输入框约束较高，已配置登录拦截。">
-<meta name="twitter:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190414000551.png">
+<meta name="twitter:title" content="Hadoop搭建伪分布式">
+<meta name="twitter:description" content="==概念== 海量、高增长、多样化的信息数据有三大发行版本  Apache、CDH、HDP">
 
 
 
@@ -142,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/15/studentInfoManage-SSM/">
+  <link rel="canonical" href="https://fuzui.net/Hadoop-pseudo-distributed.html">
 
 
 
 
 
-  <title>基于SSM的学生信息管理系统(选课) | 扶醉</title>
+  <title>Hadoop搭建伪分布式 | 扶醉</title>
   
 
 
@@ -185,7 +179,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">fuzui.net</p>
+        <h1 class="site-subtitle" itemprop="description"><center>当你的才华还撑不起你的野心的时候，<br>你就应该静下心来学习。<br>当你的能力还驾驭不了你的目标时，<br>就应该沉下心来历练。</center></h1>
       
   </div>
 
@@ -329,7 +323,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/15/studentInfoManage-SSM/">
+    <link itemprop="mainEntityOfPage" href="https://fuzui.net/Hadoop-pseudo-distributed.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="王泽">
@@ -346,7 +340,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">基于SSM的学生信息管理系统(选课)</h1>
+          <h2 class="post-title" itemprop="name headline">Hadoop搭建伪分布式</h2>
         
 
         <div class="post-meta">
@@ -358,8 +352,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-15T14:49:05+08:00">
-                2019-04-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-25T19:35:18+08:00">
+                2019-03-25
               </time>
             
 
@@ -381,8 +375,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/项目/" itemprop="url" rel="index">
-                    <span itemprop="name">项目</span>
+                  <a href="/categories/hadoop/" itemprop="url" rel="index">
+                    <span itemprop="name">hadoop</span>
                   </a>
                 </span>
 
@@ -399,8 +393,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/04/15/studentInfoManage-SSM/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/15/studentInfoManage-SSM/" itemprop="commentCount"></span>
+                <a href="/Hadoop-pseudo-distributed.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/Hadoop-pseudo-distributed.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -408,7 +402,7 @@
 
           
           
-             <span id="/2019/04/15/studentInfoManage-SSM/" class="leancloud_visitors" data-flag-title="基于SSM的学生信息管理系统(选课)">
+             <span id="/Hadoop-pseudo-distributed.html" class="leancloud_visitors" data-flag-title="Hadoop搭建伪分布式">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -434,7 +428,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.2k
+                  1.6k
                 </span>
               
 
@@ -450,7 +444,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  6
                 </span>
               
             </div>
@@ -471,335 +465,66 @@
       
 
       
-        <p><strong>项目简介：</strong><br>由SpringMVC+MyBatis为主要框架，mysql8.0配置主从复制实现读写分离，主机丛机分别为腾讯云的服务器，而项目部署在阿里云上。前端主要由bootstrap完成，背景用particles.js插件。数据库交互查询用到pagehelper分页。在添加修改相关功能时通过ajax来验证其主键是否存在可用。代码层次清晰，输入框约束较高，已配置登录拦截。</p>
-<a id="more"></a>
-<h4 id="一、应用技术"><a href="#一、应用技术" class="headerlink" title="一、应用技术"></a>一、应用技术</h4><ul>
-<li>工具：eclipse、navicat</li>
-<li>环境：JDK1.8、tomcat9.0、mysql8.0</li>
-<li>前端：JavaScript、jQuery、bootstrap4、particles.js</li>
-<li>后端：maven、SpringMVC、MyBatis、ajax、mysql读写分离、mybatis分页</li>
-</ul>
-<h4 id="二、环境搭建"><a href="#二、环境搭建" class="headerlink" title="二、环境搭建"></a>二、环境搭建</h4><ol>
-<li>建议安装eclipse4.8及以上<br> 官网下载：<a href="https://www.eclipse.org/downloads/" target="_blank" rel="noopener">点击进入官网下载</a></li>
-<li>JDK 1.8<br> 官网下载：<a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noopener">点击进入官网下载</a></li>
-<li>MySQL8.0<br> 官网下载：<a href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/mysql/</a><br> windows安装：略！<br> linux安装请查看：<a href="https://fuzui.net/2019/04/15/mysql-master-slave/#more" target="_blank" rel="noopener">https://fuzui.net/2019/04/15/mysql-master-slave/#more</a><br> mysql主从搭建(可有可无)：如果不需要读写分离只需要把applicationContext.xml配置文件改一下即可，这样也就不必搭建主从。<br> 搭建有以下方式<br> （1）单台linux通过docker搭建mysql主从：<br> <a href="https://blog.csdn.net/supermao1013/article/details/83065682" target="_blank" rel="noopener">https://blog.csdn.net/supermao1013/article/details/83065682</a><br> （2）两台云服务器或虚拟机（我用的这种方式）：<br> <a href="https://fuzui.net/2019/04/15/mysql-master-slave/#more" target="_blank" rel="noopener">https://fuzui.net/2019/04/15/mysql-master-slave/#more</a></li>
-<li>tomcat 9.0<br> 官方下载：<a href="https://tomcat.apache.org/download-90.cgi" target="_blank" rel="noopener">点击进入官网下载</a></li>
-<li><p>navicat数据库工具<br> 百度网盘下载：<a href="https://pan.baidu.com/s/1BWQglimJH4_heiKLyH0lKg" target="_blank" rel="noopener">https://pan.baidu.com/s/1BWQglimJH4_heiKLyH0lKg</a><br> 提取码：eslh</p>
-<p> <em>eclipse、jdk、tomcat等相关安装配置步骤省略</em></p>
-</li>
-</ol>
-<h4 id="三、功能"><a href="#三、功能" class="headerlink" title="三、功能"></a>三、功能</h4><p>这是在上个springmvc选课系统的基础上进行修改完善的，目前功能基本相同，修复诸多bug，上个系统中有详细介绍：<a href="https://fuzui.net/2018/12/08/onlineSC-springmvc/" target="_blank" rel="noopener">B/S基于springMVC的网上选课系统</a><br>主要功能模块图：<br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190414000551.png" alt></p>
-<p><strong>新增：</strong></p>
-<ul>
-<li>增加分页查询</li>
-<li>输入框约束<br>  学号、身份证、课程编号、教师编号只能输入数字，并且有最大输入限制，其中学号固定12位，若小于12位将会有提示。姓名只能输入中文。几乎所有输入框不能输入空格等约束</li>
-<li>下拉框联动<br>  添加、修改课程采用二级联动，即所属系别——所属专业；<br>  添加、修改学生采用三级联动，即系别——专业——班级。（三级联动代码有些复杂，因为JavaScript学的不好=-=）。</li>
-<li>ajax+springmvc验证<br>  用于验证学号、课程编号、教师编号是否存在并给出提示信息等。<br>  其中课程安排时间地点排重功能正在开发中····</li>
-<li>登录拦截<br>  在handler层配置拦截器，对各角色进行登录拦截，即未登录用户不能直接通过相应url访问。<br>  <strong><em>更多功能持续更新中······</em></strong></li>
-</ul>
-<h4 id="四、数据库设计"><a href="#四、数据库设计" class="headerlink" title="四、数据库设计"></a>四、数据库设计</h4><blockquote>
-<p>总共六个表：学生表、教师表、管理员表、课程表、课程安排表、选课表。</p>
+        <h3 id="概念"><a href="#概念" class="headerlink" title="==概念=="></a>==概念==</h3><blockquote>
+<p>海量、高增长、多样化的信息数据<br>有三大发行版本</p>
+<blockquote>
+<p>Apache、CDH、HDP</p>
 </blockquote>
-<p>&emsp;&emsp;管理员表admin</p>
-<table>
-<thead>
-<tr>
-<th>列名</th>
-<th>类型</th>
-<th>约束</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Aname</td>
-<td>Varchar（12）</td>
-<td>主键</td>
-<td>账号</td>
-</tr>
-<tr>
-<td>Apassword</td>
-<td></td>
-<td></td>
-<td>密码</td>
-</tr>
-</tbody>
-</table>
-<p>&emsp;&emsp;学生表Student</p>
-<table>
-<thead>
-<tr>
-<th>列名</th>
-<th>类型</th>
-<th>约束</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Sid</td>
-<td>Char(12)</td>
-<td>非空、主键</td>
-<td>学号</td>
-</tr>
-<tr>
-<td>Sname</td>
-<td>Varchar（8）</td>
-<td>非空</td>
-<td>姓名</td>
-</tr>
-<tr>
-<td>Sidcard</td>
-<td>Char(18)</td>
-<td>非空</td>
-<td>身份证</td>
-</tr>
-<tr>
-<td>Ssex</td>
-<td>Char(2)</td>
-<td>男女</td>
-<td>性别</td>
-</tr>
-<tr>
-<td>Spassword</td>
-<td>Varchar(12)</td>
-<td>非空</td>
-<td>密码</td>
-</tr>
-<tr>
-<td>Sage</td>
-<td>Char（2）</td>
-<td></td>
-<td>年龄</td>
-</tr>
-<tr>
-<td>Classr</td>
-<td>Varchar（15）</td>
-<td></td>
-<td>班级</td>
-</tr>
-<tr>
-<td>profession</td>
-<td>Varchar（15）</td>
-<td></td>
-<td>专业</td>
-</tr>
-<tr>
-<td>College</td>
-<td>Varchar（15）</td>
-<td></td>
-<td>学院</td>
-</tr>
-</tbody>
-</table>
-<p>&emsp;&emsp;教师表Teacher</p>
-<table>
-<thead>
-<tr>
-<th>列名</th>
-<th>类型</th>
-<th>约束</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Tid</td>
-<td>Char（4）</td>
-<td>主键</td>
-<td>工号</td>
-</tr>
-<tr>
-<td>Tname</td>
-<td>Varchar(8)</td>
-<td></td>
-<td>姓名</td>
-</tr>
-<tr>
-<td>Tpassword</td>
-<td>Varchar(12)</td>
-<td></td>
-<td>密码</td>
-</tr>
-<tr>
-<td>Tsex</td>
-<td>Char(2)</td>
-<td>男女</td>
-<td>性别</td>
-</tr>
-<tr>
-<td>Introduction</td>
-<td>Varchar（100）</td>
-<td></td>
-<td>简介</td>
-</tr>
-</tbody>
-</table>
-<p>&emsp;&emsp;课程表course</p>
-<table>
-<thead>
-<tr>
-<th>列名</th>
-<th>类型</th>
-<th>约束</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Cid</td>
-<td>Char（4）</td>
-<td>主键</td>
-<td>课程号</td>
-</tr>
-<tr>
-<td>Cname</td>
-<td>varChar(15)</td>
-<td></td>
-<td>课程名</td>
-</tr>
-<tr>
-<td>Cintroduction</td>
-<td>Varchar（100）</td>
-<td></td>
-<td>简介</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>Varchar（15）</td>
-<td></td>
-<td>类型（选修，必修）</td>
-</tr>
-<tr>
-<td>Belongcoll</td>
-<td>Varchar（15）</td>
-<td></td>
-<td>所属学院</td>
-</tr>
-<tr>
-<td>Belongpro</td>
-<td>Varchar（15）</td>
-<td></td>
-<td>所属专业</td>
-</tr>
-</tbody>
-</table>
-<p>&emsp;&emsp;课程安排</p>
-<table>
-<thead>
-<tr>
-<th>列名</th>
-<th>类型</th>
-<th>约束</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Courseclass</td>
-<td>Varchar（12）</td>
-<td>主键</td>
-<td>开课班级</td>
-</tr>
-<tr>
-<td>Coursetime</td>
-<td>Varchar（12）</td>
-<td></td>
-<td>上课时间</td>
-</tr>
-<tr>
-<td>Courseweek</td>
-<td>Varchar（12）</td>
-<td></td>
-<td>上课周</td>
-</tr>
-<tr>
-<td>Cid</td>
-<td>Char（4）</td>
-<td>外键</td>
-<td>课程号</td>
-</tr>
-<tr>
-<td>Tid</td>
-<td>Char（4）</td>
-<td>外键</td>
-<td>教师编号</td>
-</tr>
-<tr>
-<td>Classroom</td>
-<td>Varchar（6）</td>
-<td></td>
-<td>上课教室</td>
-</tr>
-<tr>
-<td>credits</td>
-<td>Int（11）</td>
-<td></td>
-<td>学分</td>
-</tr>
-<tr>
-<td>period</td>
-<td>Int（11）</td>
-<td></td>
-<td>学时</td>
-</tr>
-<tr>
-<td>Totalnum</td>
-<td>Int（11）</td>
-<td></td>
-<td>总人数</td>
-</tr>
-</tbody>
-</table>
-<p>&emsp;&emsp;选课表sc</p>
-<table>
-<thead>
-<tr>
-<th>列名</th>
-<th>类型</th>
-<th>约束</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Id</td>
-<td>varChar（4）</td>
-<td>自动增长、主键</td>
-<td>用于传值</td>
-</tr>
-<tr>
-<td>Sid</td>
-<td>Char(12)</td>
-<td>外键</td>
-<td>学生学号</td>
-</tr>
-<tr>
-<td>Cid</td>
-<td>Char（4）</td>
-<td>外键</td>
-<td>课程编号</td>
-</tr>
-</tbody>
-</table>
-<h4 id="五、主页面截图"><a href="#五、主页面截图" class="headerlink" title="五、主页面截图"></a>五、主页面截图</h4><p><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190415162534.png" alt><br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/1555316814587.png" alt="enter description here"><br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190415162832.png" alt><br>更多请查看演示</p>
-<h4 id="六、项目层次"><a href="#六、项目层次" class="headerlink" title="六、项目层次"></a>六、项目层次</h4><p><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190415164959.png" alt></p>
-<h4 id="七、展示与下载"><a href="#七、展示与下载" class="headerlink" title="七、展示与下载"></a>七、展示与下载</h4><p>展示：<br><a href="studentInfo.fuzui.net">studentInfo.fuzui.net</a><br>请大佬不要攻击我毫无防御的服务器~<br>如果发现什么bug希望能够及时留言或联系我，会尽快修正。</p>
-<p>下载：</p>
-<ul>
-<li><p>github：<a href="https://github.com/fuzui/StudentInfo" target="_blank" rel="noopener">https://github.com/fuzui/StudentInfo</a></p>
-</li>
-<li><p>百度网盘下载：<a href="https://pan.baidu.com/s/12ayd387DBVVG19ArzG6t4Q" target="_blank" rel="noopener">https://pan.baidu.com/s/12ayd387DBVVG19ArzG6t4Q</a><br>提取码：twmd<br>推荐github下载，百度网盘不会更新=-=</p>
-</li>
+</blockquote>
+<a id="more"></a>
+<h4 id="一、优势"><a href="#一、优势" class="headerlink" title="一、优势"></a>一、优势</h4><p><strong>1、高可靠性：</strong><br>Hadoop假设计算元素和存储会出现故障，因为它维护多个工作数据副本，在出现故障时可以对失败节点重新分布处理。<br><strong>2.高扩展性：</strong><br>在集群间分配任务数据，可方便扩展数以千计的节点。<br><strong>3.高效性：</strong><br>在MapReduce的思想下，Hadoop是并行工作的，以加快任务处理速度。<br><strong>4.高容错性：</strong><br>自动保存多份副本数据，并且能够自动将失败的任务重新分配。</p>
+<h4 id="二、组成"><a href="#二、组成" class="headerlink" title="二、组成"></a>二、组成</h4><ul>
+<li>Hadoop HDFS：一个高可靠、高吞吐的分布式文件系统。</li>
+<li>Hadoop MapReduce：一个分布式的离线并行计算框架。</li>
+<li>Hadoop YARN：一个资源调度平台，负责为运算程序提供服务器运算资源，相当于一个分布式的操作系统，而MaoReduce等运算程序则相当于运算于操作系统之上的应用程序。</li>
+<li>ResourceManager：一个中心服务，用来调度、启动每一个Job所属的ApplicationMaster。</li>
+<li>NodeManager：是每台机器框架的代理，是执行应用程序的容器，监控应用程序的资源使用情况，并向调度器汇报。</li>
+<li><p>Hadoop Common：Hadoop体系最底层的一个模块，为Hadoop各个子项目提供各种工具，如：配置文件和日志操作等。</p>
+<h4 id="三、运行模式"><a href="#三、运行模式" class="headerlink" title="三、运行模式"></a>三、运行模式</h4></li>
+<li>本地模式（默认模式）：不需要启用单独进程，直接可以在运行、测试和开发时使用。</li>
+<li>伪分布式模式：等同于完全分布式，只有一个节点。</li>
+<li>完全分布式模式：多个节点一起运行。</li>
 </ul>
-<p>还可留邮箱我发源码</p>
-<p>最终感谢大佬给予前端风格设计帮助 <em>@进军的橙子君</em></p>
-<p><strong>如果部署运行测试中出现问题可以找我~,留言会在12小时内回复</strong></p>
-<p><br></p>
-<hr>
-<center><font face="华文行楷" size="6" color="blue"><br>当你的才华还撑不起你的野心的时候，<br>你就应该静下心来学习。<br></font><br></center>
-
-<hr>
+<h4 id="四、伪分布式"><a href="#四、伪分布式" class="headerlink" title="四、伪分布式"></a>四、伪分布式</h4><h6 id="1-配置环境变量"><a href="#1-配置环境变量" class="headerlink" title="1. 配置环境变量"></a>1. 配置环境变量</h6><ul>
+<li>安装JDK，配置环境变量</li>
+<li>安装HADOOP，配置环境变量</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/profile</span><br><span class="line"></span><br><span class="line">export JAVA_HOME=JDK路径</span><br><span class="line">export HADOOP_HOME=hadoop路径</span><br><span class="line">PATH=$PATH:$JAVA_HOME/bin</span><br><span class="line">PATH=$PATH:$HADOOP_HOME/bin</span><br><span class="line">PATH=$PATH:$HADOOP_HOME/sbin</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;保存后刷新</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
+<h6 id="2-修改配置文件"><a href="#2-修改配置文件" class="headerlink" title="2. 修改配置文件"></a>2. 修改配置文件</h6><p>&emsp;&emsp;（1）hadoop-env.sh<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=JDK路路径</span><br></pre></td></tr></table></figure></p>
+<p>  &emsp;&emsp;（2）core-site.xml<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 指定HDFS中的NameNode的地址 --&gt;</span><br><span class="line">&lt;property&gt;</span><br><span class="line">		&lt;name&gt;fs.defaultFS&lt;/name&gt;</span><br><span class="line">		&lt;!-- 使用主机名或ip --&gt;</span><br><span class="line">		&lt;value&gt;hdfs://主机名:9000&lt;/value&gt;</span><br><span class="line">&lt;/property&gt;</span><br><span class="line">&lt;!-- 指定hadoop运行时产生文件的存储目录 --&gt;</span><br><span class="line">&lt;property&gt;</span><br><span class="line">		&lt;name&gt;hadoop.tmp.dir&lt;/name&gt;</span><br><span class="line">		&lt;!-- 默认路径/tmp/hadoop-$&#123;user.name&#125; --&gt;</span><br><span class="line">		&lt;value&gt;/hadoop安装目录/data/tmp&lt;/value&gt;</span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure></p>
+<p>  &emsp;&emsp;（3）hdfs-site.xml<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 指定HDFS副本的数量 --&gt;</span><br><span class="line">&lt;property&gt;</span><br><span class="line">		&lt;name&gt;dfs.replication&lt;/name&gt;</span><br><span class="line">		&lt;!-- 默认为3，伪分布式为单机模式，设置成1 --&gt;</span><br><span class="line">		&lt;value&gt;1&lt;/value&gt;</span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure></p>
+<h6 id="3-启动集群"><a href="#3-启动集群" class="headerlink" title="3. 启动集群"></a>3. 启动集群</h6><p> &emsp;&emsp;（1）格式化namenode</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hdfs namenade -format</span><br></pre></td></tr></table></figure>
+<p> &emsp;&emsp;只需要在修改配置后格式化一次，格式化后会生成data和logs文件夹。<br>  &emsp;&emsp;（2）启动namenode</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hadoop-daemon.sh start namenode</span><br></pre></td></tr></table></figure>
+<p>  &emsp;&emsp;（3）启动datanode</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hadoop-daemon.sh start datanode</span><br></pre></td></tr></table></figure>
+<h6 id="5-查看集群"><a href="#5-查看集群" class="headerlink" title="5. 查看集群"></a>5. 查看集群</h6><p>   &emsp;&emsp;（1）jps（类似ps命令，只列出java相关程序进程）<br>   &emsp;&emsp;（2）查看日志，hadoop安装目录下的logs文件夹<br>   &emsp;&emsp;（3）使用hadoop系统自带的web程序<br>   &emsp;&emsp;&emsp;  http://主机名或ip:50070 访问HDFS系统</p>
+<h6 id="6-操作集群"><a href="#6-操作集群" class="headerlink" title="6. 操作集群"></a>6. 操作集群</h6><blockquote>
+<p>hadoop提供三套操作集群的命令，命令格式相同，①hdfs dfs，②hadoop dfs，③hadoop fs，使用hadoop fs，可操作任何类型的文件系统，其他两种只能操作HDFS.</p>
+</blockquote>
+<p>  &emsp;&emsp;（1）HDFS上创建文件夹<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hadoop fs -mkdir -p /hdfs上文件夹路径</span><br></pre></td></tr></table></figure></p>
+<p>  &emsp;&emsp;（2）从linux上传文件到HDFS<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hadoop fs -put linux上文件路径 /hdfs上文件夹路径</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;（3）查看HDFS目录结构和文件内容<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hadoop fs -ls /hdfs上文件夹路径</span><br><span class="line">hadoop fs -cat /hdfs上文件路径</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;（4）在HDFS上运行官方示例<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hadoop jar hadoop安装目录/share/hadoop/mapreduce/hadoop-mapreduce-examples-版本号.jar 示例程序名称（wordcount） /HDFS输入文件夹 /HDFS输出文件夹</span><br><span class="line"></span><br><span class="line">#输出文件夹不可事先拥有。</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;（5）从HDFS上下载文件到linux<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hadoop fs -get /hdfs上文件路径 /linux文件夹</span><br></pre></td></tr></table></figure></p>
+<p>  &emsp;&emsp;（6）HDFS删除<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hadoop fs -rmr /hdfs上文件或文件夹路径</span><br></pre></td></tr></table></figure></p>
+<h6 id="7-配置YARN"><a href="#7-配置YARN" class="headerlink" title="7. 配置YARN"></a>7. 配置YARN</h6><p>&emsp;&emsp;（1）在yarn-env.sh和mapred-env.sh中配置JAVA_HOME<br>&emsp;&emsp;（2）yarn-site.sml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- NodeManager上运行的附属服务，许配置mapreduce_shuffle，才可运行MapReduce --&gt;</span><br><span class="line">&lt;property&gt;</span><br><span class="line">		&lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;</span><br><span class="line">		&lt;value&gt;mapreduce_shuffle&lt;/value&gt;</span><br><span class="line">&lt;/property&gt;</span><br><span class="line">&lt;!-- 指定YARN的ResourceManager的地址 --&gt;</span><br><span class="line">&lt;property&gt;</span><br><span class="line">		&lt;name&gt;yarn.resourcemanager.hostname&lt;/name&gt;</span><br><span class="line">		&lt;value&gt;主机名&lt;/value&gt;</span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;（3）mapred-site.sml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 指定MapReduce运行在Yarn上 --&gt;</span><br><span class="line">&lt;property&gt;</span><br><span class="line">		&lt;name&gt;mapreduce.framework.name&lt;/name&gt;</span><br><span class="line">		&lt;value&gt;yarn&lt;/value&gt;</span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>在yarn集群上提交任务，等任务执行完成后，就不能查看log文件了，为了解决这个问题，可以开启historyserver，实现yarn集群上历史任务的保存，yarn的web程序中每一个job都对应一个history的链接。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 历史服务器地址 --&gt;</span><br><span class="line">&lt;property&gt;</span><br><span class="line">		&lt;name&gt;mapreduce.jobhistory.address&lt;/name&gt;</span><br><span class="line">		&lt;value&gt;主机名:10020&lt;/value&gt;</span><br><span class="line">&lt;/property&gt;</span><br><span class="line">&lt;!-- 历史服务器的web程序地址 --&gt;</span><br><span class="line">&lt;property&gt;</span><br><span class="line">		&lt;name&gt;mapreduce.jobhistory.webapp.address&lt;/name&gt;</span><br><span class="line">		&lt;value&gt;主机名:19888&lt;/value&gt;</span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure>
+<h6 id="8-启动集群"><a href="#8-启动集群" class="headerlink" title="8. 启动集群"></a>8. 启动集群</h6><p>  <strong><em>必须先启动HDFS，再启动YARN。停止时先停止YARN，再停止HDFS</em></strong></p>
+<p>  &emsp;&emsp;（1）格式化namenode(需先删除data和logs文件夹)<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hdfs namenode -format</span><br></pre></td></tr></table></figure></p>
+<p>  &emsp;&emsp;（2）启动NameNode和DataNode<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hadoop-daemon.sh start namenode</span><br><span class="line">hadoop-daemon.sh start datanode</span><br></pre></td></tr></table></figure></p>
+<p>  &emsp;&emsp;（3）启动ResourceManager和NodeManager<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yarn-daemon.sh start resourcemanager</span><br><span class="line">yarn-daemon.sh start nodemanager</span><br></pre></td></tr></table></figure></p>
+<h6 id="8-集群测试"><a href="#8-集群测试" class="headerlink" title="8. 集群测试"></a>8. 集群测试</h6><p>&emsp;&emsp;（1）查看yarn的web程序：http://主机名:8088<br>&emsp;&emsp;（2）命令行操作HDFS：hadoop fis -xxx<br>&emsp;&emsp;（3）查看HDFS的web程序：http://主机名:50070<br>&emsp;&emsp;（4）执行官方测试程序dataword<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hadoop jar hadoop安装目录/share/hadoop/mapreduce/hadoop-mapreduce-examples-版本号.jar wordcount /HDFS输入文件夹 /HDFS输出文件夹</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>输出文件夹不可事先拥有。输入文件为统计每个单词个数，实现常见一个文本，编写若干个单词，空格或换行分割。然后上传到HDFS上，事先创建输入文件夹，将该文档上传于输入文件夹，最后运行上面命令。执行完成可查看输出文件夹内文件内容，便为“单词 个数”数行形式展现。</p>
+</blockquote>
 
       
     </div>
@@ -835,7 +560,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/项目/" rel="tag"><i class="fa fa-tag"></i> 项目</a>
+            <a href="/tags/linux/" rel="tag"><i class="fa fa-tag"></i> linux</a>
+          
+            <a href="/tags/hadoop/" rel="tag"><i class="fa fa-tag"></i> hadoop</a>
           
         </div>
       
@@ -848,8 +575,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/06/centos-crontab/" rel="next" title="linux(centos7)定时任务crontab">
-                <i class="fa fa-chevron-left"></i> linux(centos7)定时任务crontab
+              <a href="/linux-ftp-conf.html" rel="next" title="linux下配置ftp（centos7）">
+                <i class="fa fa-chevron-left"></i> linux下配置ftp（centos7）
               </a>
             
           </div>
@@ -858,8 +585,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/04/15/mysql-master-slave/" rel="prev" title="mysql8.0安装以及主从复制搭建(linux)">
-                mysql8.0安装以及主从复制搭建(linux) <i class="fa fa-chevron-right"></i>
+              <a href="/hadoop-fully-distributed.html" rel="prev" title="Hadoop从零开始搭建完全分布式">
+                Hadoop从零开始搭建完全分布式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -932,7 +659,7 @@
               <img class="site-author-image" itemprop="image" src="/images/mytra.png" alt="王泽">
             
               <p class="site-author-name" itemprop="name">王泽</p>
-              <p class="site-description motion-element" itemprop="description"><center>当你的才华还撑不起你的野心的时候，<br>你就应该静下心来学习。<br>当你的能力还驾驭不了你的目标时，<br>就应该沉下心来历练。</center></p>
+              <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
           <nav class="site-state motion-element">
@@ -1048,7 +775,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、应用技术"><span class="nav-text">一、应用技术</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、环境搭建"><span class="nav-text">二、环境搭建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、功能"><span class="nav-text">三、功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四、数据库设计"><span class="nav-text">四、数据库设计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#五、主页面截图"><span class="nav-text">五、主页面截图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#六、项目层次"><span class="nav-text">六、项目层次</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#七、展示与下载"><span class="nav-text">七、展示与下载</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-text">==概念==</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、优势"><span class="nav-text">一、优势</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、组成"><span class="nav-text">二、组成</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、运行模式"><span class="nav-text">三、运行模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四、伪分布式"><span class="nav-text">四、伪分布式</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-配置环境变量"><span class="nav-text">1. 配置环境变量</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-修改配置文件"><span class="nav-text">2. 修改配置文件</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-启动集群"><span class="nav-text">3. 启动集群</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#5-查看集群"><span class="nav-text">5. 查看集群</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#6-操作集群"><span class="nav-text">6. 操作集群</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#7-配置YARN"><span class="nav-text">7. 配置YARN</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#8-启动集群"><span class="nav-text">8. 启动集群</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#8-集群测试"><span class="nav-text">8. 集群测试</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -1728,6 +1455,21 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
   

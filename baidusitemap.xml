@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://yoursite.com/2019/04/21/bootstrap-basis/</loc>
+    <loc>https://fuzui.net/bootstrap-basis.html</loc>
     <lastmod>2019-04-20</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/2019/04/19/mongodb-replset/</loc>
+    <loc>https://fuzui.net/mongodb-replset.html</loc>
     <lastmod>2019-04-19</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/2019/04/17/mongodb-install/</loc>
+    <loc>https://fuzui.net/mongodb-install.html</loc>
     <lastmod>2019-04-17</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/2019/03/11/hello-world/</loc>
+    <loc>https://fuzui.net/hello-world.html</loc>
     <lastmod>2019-04-17</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/2019/04/15/studentInfoManage-SSM/</loc>
+    <loc>https://fuzui.net/studentInfoManage-SSM.html</loc>
     <lastmod>2019-04-15</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/2019/04/15/mysql-master-slave/</loc>
+    <loc>https://fuzui.net/mysql-master-slave.html</loc>
     <lastmod>2019-04-15</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/2019/04/06/centos-crontab/</loc>
+    <loc>https://fuzui.net/centos-crontab.html</loc>
     <lastmod>2019-04-06</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/2019/04/03/hive/</loc>
+    <loc>https://fuzui.net/hive.html</loc>
     <lastmod>2019-04-03</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/2019/03/27/hadoop-fully-distributed/</loc>
+    <loc>https://fuzui.net/hadoop-fully-distributed.html</loc>
     <lastmod>2019-04-03</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/2019/03/25/linux-ftp-conf/</loc>
+    <loc>https://fuzui.net/linux-ftp-conf.html</loc>
     <lastmod>2019-03-28</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/2019/03/25/Hadoop-pseudo-distributed/</loc>
+    <loc>https://fuzui.net/Hadoop-pseudo-distributed.html</loc>
     <lastmod>2019-03-26</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/2018/12/08/onlineSC-springmvc/</loc>
+    <loc>https://fuzui.net/onlineSC-springmvc.html</loc>
     <lastmod>2019-03-25</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/2019/03/14/linuxCommand/</loc>
+    <loc>https://fuzui.net/linuxCommand.html</loc>
     <lastmod>2019-03-14</lastmod>
   </url>
 </urlset>
