@@ -1828,7 +1828,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #25ba38;
+  background: #3e871f;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2918,17 +2918,13 @@ hr {
   -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
 }
 .sidebar {
+  color: #fff;
   background: url("https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/ce_500443628.jpg") no-repeat !important;
   background-size: cover !important;
   position: fixed !important;
   right: 0 !important;
   top: 0 !important;
   bottom: 0 !important;
-}
-.sidebar p,
-.sidebar span,
-.sidebar a {
-  color: #8cfbff;
 }
 body {
   background: url("https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/53d90292772ca.jpg");
