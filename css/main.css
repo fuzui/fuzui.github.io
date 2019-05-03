@@ -1828,7 +1828,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #5395fc;
+  background: #0673df;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2927,4 +2927,9 @@ hr {
 }
 body {
   background: url("https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/53d90292772ca.jpg");
+}
+#sidebar p,
+#sidebar span,
+#sidebar a {
+  color: #8cfbff;
 }
