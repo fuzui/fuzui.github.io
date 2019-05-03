@@ -95,20 +95,18 @@
 
 
 
-<meta name="description" content="下载页                               皮质腕表 水晶刻度大气表盘              瑞典 | Daniel Wellington | 价格:￥1233.24                                                  税费：进口税 预计146.76元                  物流：香港仓发">
+<meta name="description" content="div展开收缩代码  * { margin:0; padding:0;} body { text-align:center; font:75% Verdana, Arial, Helvetica, sans-serif;} h1 { font:125% Arial, Helvetica, sans-serif; text-align:left; font-weight:bolder; bac">
 <meta name="keywords" content="全栈">
 <meta property="og:type" content="website">
 <meta property="og:title" content="扶醉">
 <meta property="og:url" content="https://fuzui.net/download/index.html">
 <meta property="og:site_name" content="扶醉">
-<meta property="og:description" content="下载页                               皮质腕表 水晶刻度大气表盘              瑞典 | Daniel Wellington | 价格:￥1233.24                                                  税费：进口税 预计146.76元                  物流：香港仓发">
+<meta property="og:description" content="div展开收缩代码  * { margin:0; padding:0;} body { text-align:center; font:75% Verdana, Arial, Helvetica, sans-serif;} h1 { font:125% Arial, Helvetica, sans-serif; text-align:left; font-weight:bolder; bac">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://fuzui.net/download/images/pic.jpg">
-<meta property="og:updated_time" content="2019-05-03T12:56:51.498Z">
+<meta property="og:updated_time" content="2019-05-03T13:12:28.219Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="扶醉">
-<meta name="twitter:description" content="下载页                               皮质腕表 水晶刻度大气表盘              瑞典 | Daniel Wellington | 价格:￥1233.24                                                  税费：进口税 预计146.76元                  物流：香港仓发">
-<meta name="twitter:image" content="https://fuzui.net/download/images/pic.jpg">
+<meta name="twitter:description" content="div展开收缩代码  * { margin:0; padding:0;} body { text-align:center; font:75% Verdana, Arial, Helvetica, sans-serif;} h1 { font:125% Arial, Helvetica, sans-serif; text-align:left; font-weight:bolder; bac">
 
 
 
@@ -343,80 +341,80 @@
         
         
           <!DOCTYPE html>
-<html lang="en">
+<html>
 <head><meta name="generator" content="Hexo 3.8.0">
-    <meta charset="UTF-8">
-    <title>下载页</title>
+<title>div展开收缩代码</title>
+<style>
+* { margin:0; padding:0;}
+body { text-align:center; font:75% Verdana, Arial, Helvetica, sans-serif;}
+h1 { font:125% Arial, Helvetica, sans-serif; text-align:left; font-weight:bolder; background:#333; padding:3px; display:block; color:#99CC00}
+.class1 { width:40%; background:#CCC; position:relative; margin:0 auto; padding:5px;}
+span { position:absolute; right:10px; top:8px; cursor: pointer; color:yellow;}
+p { text-align:left; line-height:20px; background:#333; padding:3px; margin-top:5px; color:#99CC00}
+#class1content, #class2content { height:300px;overflow:hidden;display:none;}
+</style>
+<script>
+function $(element){
+return element = document.getElementById(element);
+}
+function $D(element){
+var d=$(element);
+var h=d.offsetHeight;
+var maxh=300;
+function dmove(){
+h+=50; //设置层展开的速度
+if(h>=maxh){
+d.style.height='300px';
+clearInterval(iIntervalId);
+}else{
+d.style.display='block';
+d.style.height=h+'px';
+}
+}
+iIntervalId=setInterval(dmove,2);
+}
+function $D2(element){
+var d=$(element);
+var h=d.offsetHeight;
+var maxh=300;
+function dmove(){
+h-=50;//设置层收缩的速度
+if(h<=0){
+d.style.display='none';
+clearInterval(iIntervalId);
+}else{
+d.style.height=h+'px';
+}
+}
+iIntervalId=setInterval(dmove,2);
+}
+function $use(targetid,objN){
+var d=$(targetid);
+var sb=$(objN);
+if (d.style.display=="block"){
+$D2(targetid);
+d.style.display="none";
+sb.innerHTML="展开";
+} else {
+$D(targetid);
+d.style.display="block";
+sb.innerHTML='收缩';
+}
+}
+</script>
 </head>
 <body>
-    <div id="box"> 
-        <div id="content"> 
-            <h4>皮质腕表 水晶刻度大气表盘</h4> 
-            <p>瑞典 | Daniel Wellington | 价格:￥1233.24</p> 
-            <div id="spread"> 
-                <img src="images/pic.jpg" alt> 
-                <p>税费：进口税 预计146.76元</p> 
-                <p>物流：香港仓发货 至中国海关 至杭州市</p> 
-                <p>运费：0.00 24：00前付款,预计15日内送达</p> 
-            </div> 
-        </div> 
-        <button id="btn">下载</button>
-    </div>
-    <style>
-        *{ margin: 0; padding: 0; } 
-        body{ font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; color: #222222; } 
-        #box{ width: 600px; margin: 20px auto; text-align: center; } 
-        #content{ background-color: #b3dae9; border-radius: 8px; box-shadow: 1px 1px 1px #ccc; border:1px solid #EEEEEE; }
-        h4{ font-size: 16px; } 
-        h4,p{ padding: 10px 0; } 
-        #btn{ width: 80px; } 
-        #spread{ height: 0px; overflow: hidden; } 
-    </style>
-    
-    <script> 
-        /*获得btn*/
-    var btn = document.getElementById('btn');
-    var spread = document.getElementById('spread'); 
-    var iSpread = false;
-    /*高度*/
-    var height = spread.scrollHeight;
-    /*总时间*/
-    var time = 420; /*间隔*/
-    var interval = 8.4;
-    /*速度*/
-    var speed = height/(time/interval); /*点击事件*/
-    btn.onclick = function (e) { 
-        btn.disabled = 'disabled';
-        if(!iSpread){
-            var speeds = 0;
-            var timer = setInterval(function () { 
-                speeds += speed;
-                spread.style.height = speeds + 'px';
-
-                if(parseInt(spread.style.height) >=height){ 
-                    clearTimeout(timer);
-                    btn.disabled = '';
-                } },interval);
-            this.innerHTML = '收起';
-        }else { 
-            var speeds = height;
-            this.innerHTML = '展开';
-            var timer = setInterval(function () { 
-                speeds -= speed;
-                spread.style.height = speeds + 'px';
-                if(speeds <= 0){ 
-                    clearTimeout(timer);
-                    btn.disabled = '';
-                } },interval) } 
-        iSpread = !iSpread;
-    } </script>
-
-
-    
-</body>
-
-</html>
-
+<div class="class1">
+<h1>div展开收缩效果</h1>
+<span id="stateBut" onclick="$use('class1content','stateBut')">展开</span>
+<p id="class1content">something.........</p>
+</div>
+<div class="class1">
+<h1>div展开收缩效果</h1>
+<span id="stateBut1" onclick="$use('class2content','stateBut1')">展开</span>
+<p id="class2content">something.........</p>
+</div>
+</body></html>
         
       </div>
       
@@ -611,7 +609,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-text">皮质腕表 水晶刻度大气表盘</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-text">div展开收缩效果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-text">div展开收缩效果</span></a></li></ol></div>
             
 
           </div>
