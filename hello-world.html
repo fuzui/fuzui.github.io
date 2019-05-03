@@ -570,7 +570,34 @@
               <p class="site-author-name" itemprop="name">王泽</p>
 			  
 			  
-			  <center>当你的才华还撑不起你的野心的时候，<br>你就应该静下心来学习。<br>当你的能力还驾驭不了你的目标时，<br>就应该沉下心来历练。</center>
+			  
+			  
+			  
+			  <p class="word1"></p>
+			<p class="word2"></p>
+
+	<script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
+	<script src="js/l-by-l.min.js"></script>
+	<script>
+	jQuery(document).ready(function($){
+	    
+	    $(".word1").lbyl({
+	        content: "朦胧的月色正浓，<br> 当你的才华还撑不起你的野心的时候，<br>你就应该静下心来学习。",
+	        speed: 100,
+	        type: 'show',
+	        finished: function(){ 
+	        	$('.word2').lbyl({
+	        		content:"当你的能力还驾驭不了你的目标时，<br>就应该沉下心来历练。",
+	        		speed: 150,
+	        		type: 'fade',
+	        		fadeSpeed: 500
+	        	})
+	        } // Finished Callback
+	    });
+
+	});
+	</script>
+			  
 			  
 			  
               <p class="site-description motion-element" itemprop="description"></p>
