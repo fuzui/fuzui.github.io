@@ -82,7 +82,7 @@
 
 
 
-  <meta name="keywords" content="安装类，MongoDB,">
+  <meta name="keywords" content="springSecurity,">
 
 
 
@@ -95,29 +95,23 @@
 
 
 
-<meta name="description" content="MongoDB4.0安装 MongoDB 配置用户和密码验证 远程连接MongoDB">
-<meta name="keywords" content="安装类，MongoDB">
+<meta name="description" content="之前我们采用了配置文件的方式从数据库中读取用户进行登录。虽然该方式的灵活性相较于静态账号密码的方式灵活了许多，但是将数据库的结构暴露在明显的位置上，绝对不是一个明智的做法。本文通过Java代码实现UserDetailsService接口来实现身份认证。 1.1 UserDetailsService在身份认证中的作用Spring Security中进行身份验证的是AuthenticationMan">
+<meta name="keywords" content="springSecurity">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux安装MongoDB4.0（centos7）">
-<meta property="og:url" content="https://fuzui.net/linux安装MongoDB4.0.html">
+<meta property="og:title" content="【转】Security身份认证之UserDetailsService">
+<meta property="og:url" content="https://fuzui.net/Security身份认证之UserDetailsService.html">
 <meta property="og:site_name" content="扶醉">
-<meta property="og:description" content="MongoDB4.0安装 MongoDB 配置用户和密码验证 远程连接MongoDB">
+<meta property="og:description" content="之前我们采用了配置文件的方式从数据库中读取用户进行登录。虽然该方式的灵活性相较于静态账号密码的方式灵活了许多，但是将数据库的结构暴露在明显的位置上，绝对不是一个明智的做法。本文通过Java代码实现UserDetailsService接口来实现身份认证。 1.1 UserDetailsService在身份认证中的作用Spring Security中进行身份验证的是AuthenticationMan">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190417163444.png">
-<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190417164057.png">
-<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190417164501.png">
-<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190417164725.png">
-<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/$PE@Q7]7T~E]PPG%W`%6G59.png">
-<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/GFA@R3BFTAV[O_0[$OV~S$G.png">
-<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190417165508.png">
-<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190417165631.png">
-<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190417170126.png">
-<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190417170229.png">
-<meta property="og:updated_time" content="2019-04-17T09:36:13.624Z">
+<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20180406152002371.png">
+<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20180406152945823.png">
+<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20180406153002554.png">
+<meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20180406153020212.png">
+<meta property="og:updated_time" content="2019-05-08T14:29:39.526Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linux安装MongoDB4.0（centos7）">
-<meta name="twitter:description" content="MongoDB4.0安装 MongoDB 配置用户和密码验证 远程连接MongoDB">
-<meta name="twitter:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190417163444.png">
+<meta name="twitter:title" content="【转】Security身份认证之UserDetailsService">
+<meta name="twitter:description" content="之前我们采用了配置文件的方式从数据库中读取用户进行登录。虽然该方式的灵活性相较于静态账号密码的方式灵活了许多，但是将数据库的结构暴露在明显的位置上，绝对不是一个明智的做法。本文通过Java代码实现UserDetailsService接口来实现身份认证。 1.1 UserDetailsService在身份认证中的作用Spring Security中进行身份验证的是AuthenticationMan">
+<meta name="twitter:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20180406152002371.png">
 
 
 
@@ -147,13 +141,13 @@
 
 
 
-  <link rel="canonical" href="https://fuzui.net/linux安装MongoDB4.0.html">
+  <link rel="canonical" href="https://fuzui.net/Security身份认证之UserDetailsService.html">
 
 
 
 
 
-  <title>linux安装MongoDB4.0（centos7） | 扶醉</title>
+  <title>【转】Security身份认证之UserDetailsService | 扶醉</title>
   
 
 
@@ -344,7 +338,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fuzui.net/linux安装MongoDB4.0.html">
+    <link itemprop="mainEntityOfPage" href="https://fuzui.net/Security身份认证之UserDetailsService.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="王泽">
@@ -361,7 +355,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">linux安装MongoDB4.0（centos7）</h2>
+          <h2 class="post-title" itemprop="name headline">【转】Security身份认证之UserDetailsService</h2>
         
 
         <div class="post-meta">
@@ -373,8 +367,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-17T17:08:07+08:00">
-                2019-04-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-08T22:11:41+08:00">
+                2019-05-08
               </time>
             
 
@@ -396,8 +390,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/安装类/" itemprop="url" rel="index">
-                    <span itemprop="name">安装类</span>
+                  <a href="/categories/springSecurity/" itemprop="url" rel="index">
+                    <span itemprop="name">springSecurity</span>
                   </a>
                 </span>
 
@@ -414,8 +408,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/linux安装MongoDB4.0.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/linux安装MongoDB4.0.html" itemprop="commentCount"></span>
+                <a href="/Security身份认证之UserDetailsService.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/Security身份认证之UserDetailsService.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -423,7 +417,7 @@
 
           
           
-             <span id="/linux安装MongoDB4.0.html" class="leancloud_visitors" data-flag-title="linux安装MongoDB4.0（centos7）">
+             <span id="/Security身份认证之UserDetailsService.html" class="leancloud_visitors" data-flag-title="【转】Security身份认证之UserDetailsService">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -449,7 +443,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  444
+                  704
                 </span>
               
 
@@ -465,7 +459,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  3
                 </span>
               
             </div>
@@ -486,50 +480,16 @@
       
 
       
-        <hr>
-<ul>
-<li>MongoDB4.0安装</li>
-<li>MongoDB 配置用户和密码验证</li>
-<li>远程连接MongoDB</li>
-</ul>
-<hr>
-<a id="more"></a>
-<h4 id="1-配置包管理系统（yum）"><a href="#1-配置包管理系统（yum）" class="headerlink" title="1. 配置包管理系统（yum）"></a>1. 配置包管理系统（yum）</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[mongodb-org-4.0] </span><br><span class="line">name = MongoDB Repository </span><br><span class="line">baseurl = https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/4.0/x86_64/ </span><br><span class="line">gpgcheck = 1 </span><br><span class="line">enabled = 1 </span><br><span class="line">gpgkey = https：// www.mongodb.org/static/pgp/server-4.0.asc</span><br></pre></td></tr></table></figure>
-<h4 id="2-安装MongoDB"><a href="#2-安装MongoDB" class="headerlink" title="2. 安装MongoDB"></a>2. 安装MongoDB</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install -y mongodb-org</span><br></pre></td></tr></table></figure>
-<h4 id="3-启动MongoDB"><a href="#3-启动MongoDB" class="headerlink" title="3.启动MongoDB"></a>3.启动MongoDB</h4><p>启动：<code>systemctl start mongod</code><br>停止：<code>systemctl stop mongod</code><br>重启：<code>systemctl restart mongod</code><br>开机启动：<code>systemctl enable mongod.service</code></p>
-<h4 id="4-进入MongoDB"><a href="#4-进入MongoDB" class="headerlink" title="4.进入MongoDB"></a>4.进入MongoDB</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongo</span><br></pre></td></tr></table></figure>
-<h4 id="5-设置验证（账户密码）"><a href="#5-设置验证（账户密码）" class="headerlink" title="5.设置验证（账户密码）"></a>5.设置验证（账户密码）</h4><p>(1) 进入MongoDB<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongo</span><br></pre></td></tr></table></figure></p>
-<p>(2) 进入admin数据库<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use admin</span><br></pre></td></tr></table></figure></p>
-<p>(3) 创建<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.createUser(&#123;user:"root",pwd:"root",roles:["root"]&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>(4) 退出<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exit</span><br></pre></td></tr></table></figure></p>
-<p>(5) 修改配置文件<br><code>vim /etc/mongod.conf</code><br>修改：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">security：</span><br><span class="line">    authorization: enabled</span><br></pre></td></tr></table></figure></p>
-<p><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190417163444.png" alt></p>
-<font color="red">原本sercurity是被注释掉的，需要把前面#删除，而authorization也是不存在的，需要手动添加。</font>
-
-<p>(6) 重启<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart mongod</span><br></pre></td></tr></table></figure></p>
-<p>(7)验证<br>使用mongo进入MongoDB之后，使用show dbs是没有反应的，需要先进入admin数据库，持行<code>db.auth(&quot;root&quot;,&quot;root&quot;)</code>后，才可以使用。<br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190417164057.png" alt></p>
-<h4 id="6-远程连接"><a href="#6-远程连接" class="headerlink" title="6.远程连接"></a>6.远程连接</h4><p>(1) 关闭防火墙<br><code>systemctl stop firewalld</code><br>可以使其开机关闭：<code>systemctl disable firewalld</code><br>(2) 修改配置文件<br><code>vim /etc/mongod.conf</code><br>修改：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bindIp: 0.0.0.0</span><br></pre></td></tr></table></figure></p>
-<p> 原来bindIp是127.0.0.1，需要改为0.0.0.0<br> <img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190417164501.png" alt></p>
-<p>(3) 重启MongoDB<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart mongod</span><br></pre></td></tr></table></figure></p>
-<p>(4)    连接<br>我这里用的 Navicat 12 for MongoDB<br>工具都差不多</p>
-<ul>
-<li><p>新建：<br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190417164725.png" alt></p>
-</li>
-<li><p>输入信息：这里填写centos7的ip和MongoDB的admin数据库和刚刚设置过的账号密码<br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/$PE@Q7]7T~E]PPG%W`%6G59.png" alt></p>
-</li>
-<li><p>建立ssh：这里填写centos7的ip和其登录的用户（我直接用的root）<br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/GFA@R3BFTAV[O_0[$OV~S$G.png" alt></p>
-</li>
-</ul>
-<ul>
-<li>测试连接<br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190417165508.png" alt></li>
-</ul>
-<p>最后就可以查看了，默认的数据库是看不到的，所以我这里创了个新数据库<br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190417165631.png" alt><br>linux中：<br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190417170126.png" alt><br>再通过图形界面查看：<br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190417170229.png" alt></p>
-<p><br></p>
-<p>参考：</p>
-<ul>
-<li><a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-red-hat/" target="_blank" rel="noopener">MongoDB官方安装</a></li>
-<li><a href="https://blog.csdn.net/qq_26896281/article/details/81206492" target="_blank" rel="noopener">MongoDB4.0.0 远程连接及用户名密码认证登陆配置——windows</a></li>
-</ul>
+        <p> 之前我们采用了配置文件的方式从数据库中读取用户进行登录。虽然该方式的灵活性相较于静态账号密码的方式灵活了许多，但是将数据库的结构暴露在明显的位置上，绝对不是一个明智的做法。本文通过Java代码实现UserDetailsService接口来实现身份认证。</p>
+<h5 id="1-1-UserDetailsService在身份认证中的作用"><a href="#1-1-UserDetailsService在身份认证中的作用" class="headerlink" title="1.1 UserDetailsService在身份认证中的作用"></a>1.1 UserDetailsService在身份认证中的作用</h5><p>Spring Security中进行身份验证的是AuthenticationManager接口，ProviderManager是它的一个默认实现，但它并不用来处理身份认证，而是委托给配置好的AuthenticationProvider，每个AuthenticationProvider会轮流检查身份认证。检查后或者返回Authentication对象或者抛出异常。</p>
+<p>验证身份就是加载响应的UserDetails，看看是否和用户输入的账号、密码、权限等信息匹配。此步骤由实现AuthenticationProvider的DaoAuthenticationProvider（它利用UserDetailsService验证用户名、密码和授权）处理。包含 GrantedAuthority 的 UserDetails对象在构建 Authentication对象时填入数据。<br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20180406152002371.png" alt></p>
+<h5 id="1-2-配置UserDetailsService"><a href="#1-2-配置UserDetailsService" class="headerlink" title="1.2 配置UserDetailsService"></a>1.2 配置UserDetailsService</h5><h6 id="1-2-1-更改Spring-Security-xml中身份的方式，使用自定义的UserDetailsService。"><a href="#1-2-1-更改Spring-Security-xml中身份的方式，使用自定义的UserDetailsService。" class="headerlink" title="1.2.1 更改Spring-Security.xml中身份的方式，使用自定义的UserDetailsService。"></a>1.2.1 更改Spring-Security.xml中身份的方式，使用自定义的UserDetailsService。</h6><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">security:authentication-manager</span>&gt;</span> </span><br><span class="line">	<span class="tag">&lt;<span class="name">security:authentication-provider</span> <span class="attr">user-service</span> <span class="attr">ref</span>=<span class="string">"favUserDetailService"</span>&gt;</span>     </span><br><span class="line">	<span class="tag">&lt;/<span class="name">security:authentication-provider</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">security:authentication-manager</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"favUserDetailService"</span> <span class="attr">class</span>=<span class="string">"com.favccxx.favsecurity.security.FavUserDetailService"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<h6 id="1-2-2-新建FavUserDetailsService-java，实现UserDetailsService接口。为了降低学习的难度，这里并没有与数据库进行集成，而是采用模拟从数据库中获取用户的方式进行身份验证。示例代码如下："><a href="#1-2-2-新建FavUserDetailsService-java，实现UserDetailsService接口。为了降低学习的难度，这里并没有与数据库进行集成，而是采用模拟从数据库中获取用户的方式进行身份验证。示例代码如下：" class="headerlink" title="1.2.2 新建FavUserDetailsService.java，实现UserDetailsService接口。为了降低学习的难度，这里并没有与数据库进行集成，而是采用模拟从数据库中获取用户的方式进行身份验证。示例代码如下："></a>1.2.2 新建FavUserDetailsService.java，实现UserDetailsService接口。为了降低学习的难度，这里并没有与数据库进行集成，而是采用模拟从数据库中获取用户的方式进行身份验证。示例代码如下：</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.favccxx.favsecurity.security;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Collection;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> org.apache.logging.log4j.LogManager;</span><br><span class="line"><span class="keyword">import</span> org.apache.logging.log4j.Logger;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.core.GrantedAuthority;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.core.authority.SimpleGrantedAuthority;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.core.userdetails.User;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.core.userdetails.UserDetails;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.core.userdetails.UserDetailsService;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.core.userdetails.UsernameNotFoundException;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FavUserDetailService</span> <span class="keyword">implements</span> <span class="title">UserDetailsService</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger logger = LogManager.getLogger(FavUserDetailService.class);  </span><br><span class="line">	<span class="comment">/**  * 根据用户名获取用户 - 用户的角色、权限等信息   */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> UserDetails <span class="title">loadUserByUsername</span><span class="params">(String username)</span> <span class="keyword">throws</span> UsernameNotFoundException </span>&#123;      </span><br><span class="line">		UserDetails userDetails = <span class="keyword">null</span>;     </span><br><span class="line">		<span class="keyword">try</span> &#123;           </span><br><span class="line">			com.favccxx.favsecurity.pojo.User favUser = <span class="keyword">new</span> com.favccxx.favsecurity.pojo.User();            </span><br><span class="line">			favUser.setUsername(<span class="string">"favccxx"</span>);        </span><br><span class="line">			favUser.setPassword(<span class="string">"favccxx"</span>);         </span><br><span class="line">			Collection&lt;GrantedAuthority&gt; authList = getAuthorities();         </span><br><span class="line">			userDetails = <span class="keyword">new</span> User(username, favUser.getPassword().toLowerCase(),<span class="keyword">true</span>,<span class="keyword">true</span>,<span class="keyword">true</span>,<span class="keyword">true</span>,authList);     </span><br><span class="line">		&#125;<span class="keyword">catch</span> (Exception e) &#123;         </span><br><span class="line">			e.printStackTrace();        </span><br><span class="line">		&#125;       </span><br><span class="line">		<span class="keyword">return</span> userDetails; </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/**  * 获取用户的角色权限,为了降低实验的难度，这里去掉了根据用户名获取角色的步骤     * <span class="doctag">@param</span>    * <span class="doctag">@return</span>   */</span> </span><br><span class="line">	<span class="function"><span class="keyword">private</span> Collection&lt;GrantedAuthority&gt; <span class="title">getAuthorities</span><span class="params">()</span></span>&#123;        </span><br><span class="line">		List&lt;GrantedAuthority&gt; authList = <span class="keyword">new</span> ArrayList&lt;GrantedAuthority&gt;();       </span><br><span class="line">		authList.add(<span class="keyword">new</span> SimpleGrantedAuthority(<span class="string">"ROLE_USER"</span>));      </span><br><span class="line">		authList.add(<span class="keyword">new</span> SimpleGrantedAuthority(<span class="string">"ROLE_ADMIN"</span>));     </span><br><span class="line">		<span class="keyword">return</span> authList;    </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="1-2-3-启动应用服务器，只要用户名和密码不全是favccxx，就会产生下面的错误。"><a href="#1-2-3-启动应用服务器，只要用户名和密码不全是favccxx，就会产生下面的错误。" class="headerlink" title="1.2.3 启动应用服务器，只要用户名和密码不全是favccxx，就会产生下面的错误。"></a>1.2.3 启动应用服务器，只要用户名和密码不全是favccxx，就会产生下面的错误。</h6><p><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20180406152945823.png" alt></p>
+<p>用户名和密码都输入favccxx，则登陆成功</p>
+<p><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20180406153002554.png" alt></p>
+<h5 id="1-3-跟踪UserDetailsService。"><a href="#1-3-跟踪UserDetailsService。" class="headerlink" title="1.3 跟踪UserDetailsService。"></a>1.3 跟踪UserDetailsService。</h5><p>身份认证的调用流程图如下，用户可下载Spring Security源代码跟踪调试。<br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20180406153020212.png" alt></p>
+<p><br><br>本文转自:<a href="https://blog.csdn.net/shehun1/article/details/45394405" target="_blank" rel="noopener">Spring Security身份认证之UserDetailsService</a></p>
 
       
     </div>
@@ -565,7 +525,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/安装类，MongoDB/" rel="tag"><i class="fa fa-tag"></i> 安装类，MongoDB</a>
+            <a href="/tags/springSecurity/" rel="tag"><i class="fa fa-tag"></i> springSecurity</a>
           
         </div>
       
@@ -578,8 +538,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/mysql8.0安装以及主从复制搭建(linux).html" rel="next" title="mysql8.0安装以及主从复制搭建(linux)">
-                <i class="fa fa-chevron-left"></i> mysql8.0安装以及主从复制搭建(linux)
+              <a href="/bootstrap基本样式.html" rel="next" title="bootstrap样式记录">
+                <i class="fa fa-chevron-left"></i> bootstrap样式记录
               </a>
             
           </div>
@@ -587,10 +547,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/MongoDB复制集介绍及搭建.html" rel="prev" title="MongoDB复制集介绍及搭建">
-                MongoDB复制集介绍及搭建 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -793,7 +749,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-配置包管理系统（yum）"><span class="nav-text">1. 配置包管理系统（yum）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-安装MongoDB"><span class="nav-text">2. 安装MongoDB</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-启动MongoDB"><span class="nav-text">3.启动MongoDB</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-进入MongoDB"><span class="nav-text">4.进入MongoDB</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-设置验证（账户密码）"><span class="nav-text">5.设置验证（账户密码）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-远程连接"><span class="nav-text">6.远程连接</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1-UserDetailsService在身份认证中的作用"><span class="nav-text">1.1 UserDetailsService在身份认证中的作用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2-配置UserDetailsService"><span class="nav-text">1.2 配置UserDetailsService</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-2-1-更改Spring-Security-xml中身份的方式，使用自定义的UserDetailsService。"><span class="nav-text">1.2.1 更改Spring-Security.xml中身份的方式，使用自定义的UserDetailsService。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#1-2-2-新建FavUserDetailsService-java，实现UserDetailsService接口。为了降低学习的难度，这里并没有与数据库进行集成，而是采用模拟从数据库中获取用户的方式进行身份验证。示例代码如下："><span class="nav-text">1.2.2 新建FavUserDetailsService.java，实现UserDetailsService接口。为了降低学习的难度，这里并没有与数据库进行集成，而是采用模拟从数据库中获取用户的方式进行身份验证。示例代码如下：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#1-2-3-启动应用服务器，只要用户名和密码不全是favccxx，就会产生下面的错误。"><span class="nav-text">1.2.3 启动应用服务器，只要用户名和密码不全是favccxx，就会产生下面的错误。</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-3-跟踪UserDetailsService。"><span class="nav-text">1.3 跟踪UserDetailsService。</span></a></li></ol></div>
             
 
           </div>
