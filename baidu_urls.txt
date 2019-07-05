@@ -1,3 +1,6 @@
+https://fuzui.net/PostgreSQL导入sql文件.html
+https://fuzui.net/git合并分支.html
+https://fuzui.net/《转》npm与package-json快速入门教程.html
 https://fuzui.net/mysql利用存储过程批量插入一千万数据（半小时）.html
 https://fuzui.net/PowerDesigner连接MySQL和逆向工程图.html
 https://fuzui.net/Security身份认证之UserDetailsService.html
