@@ -446,37 +446,6 @@
           
 
           
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  4.5k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  17
-                </span>
-              
-            </div>
-          
 
           
 
@@ -508,7 +477,7 @@
 <p>1.一个网站，就是前面提到用于搜索 JS 模块的网站：<a href="https://www.npmjs.com/" target="_blank" rel="noopener">https://www.npmjs.com/</a><br>2.一个仓库，保存着人们分享的 JS 模块的大数据库<br>3.命令行里的客户端，开发者使用它来管理、安装、发布模块</p>
 <p>只要开发者发布某个模块到仓库中，其他人就可以从 npm 网站或者命令行中下载、使用它了！</p>
 <h4 id="安装-npm"><a href="#安装-npm" class="headerlink" title="安装 npm"></a>安装 npm</h4><p>npm 是依附于 node.js 的，我们可以去它的官网 <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">https://nodejs.org/en/download/</a> 下载安装 node.js。</p>
-<p>下载好 node.js, npm 也就有了，使用 npm -v 查看安装的 npm 版本：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">zhangshixin$</span> node -v</span><br><span class="line">v6.10.0</span><br></pre></td></tr></table></figure></p>
+<p>下载好 node.js, npm 也就有了，使用 npm -v 查看安装的 npm 版本：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">zhangshixin$</span><span class="bash"> node -v</span></span><br><span class="line">v6.10.0</span><br></pre></td></tr></table></figure></p>
 <h4 id="更新-npm"><a href="#更新-npm" class="headerlink" title="更新 npm"></a>更新 npm</h4><p>npm 更新地可比 node 勤快多了，因此你下载的 node 附带的 npm 版本可能不是最新的，你可以使用如下命令下载最新 npm:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install npm@latest -g</span><br></pre></td></tr></table></figure></p>
 <p>其中 install 不用介绍了，就是安装，后面的 <code>npm@latest</code> 就是 <code>&lt;packageName&gt;@&lt;version&gt;</code>的格式，我们在下载其他模块时也是这个格式。<code>-g</code> 代表全局安装。</p>
 <h4 id="package-json-文件"><a href="#package-json-文件" class="headerlink" title="package.json 文件"></a>package.json 文件</h4><blockquote>
@@ -533,7 +502,7 @@
 <li>license：默认是 MIT</li>
 <li>bugs：当前项目的一些错误信息，如果有的话</li>
 </ul>
-<p>我们可以为 init 命令设置一些默认值，比如：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span> npm set init.author.email "shixinzhang2016@gmail.com"</span><br><span class="line"><span class="meta">&gt;</span> npm set init.author.name "shixinzhang"</span><br><span class="line"><span class="meta">&gt;</span> npm set init.license "MIT"</span><br></pre></td></tr></table></figure></p>
+<p>我们可以为 init 命令设置一些默认值，比如：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"> npm <span class="built_in">set</span> init.author.email <span class="string">"shixinzhang2016@gmail.com"</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> npm <span class="built_in">set</span> init.author.name <span class="string">"shixinzhang"</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> npm <span class="built_in">set</span> init.license <span class="string">"MIT"</span></span></span><br></pre></td></tr></table></figure></p>
 <blockquote>
 <p>注意：<br>如果 package.json 中没有 description 信息，npm 使用项目中的 README.md 的第一行作为描述信息。这个描述信息有助于别人搜索你的项目，因此建议好好写 description 信息。</p>
 </blockquote>
@@ -578,7 +547,7 @@ x
 <p>如果想只安装 <code>dependencies</code> 中的内容，可以使用 <code>--production</code> 字段：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --production</span><br></pre></td></tr></table></figure></p>
 <h5 id="本地安装-package"><a href="#本地安装-package" class="headerlink" title="本地安装 package"></a>本地安装 package</h5><p>npm 使用下面的命令下载一个包：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install &lt;package_name&gt;</span><br></pre></td></tr></table></figure></p>
 <p>后面就是要安装包的名称。这个命令会在当前目录创建一个 node_modules 目录，然后下载我们指定的包到这个目录中。<br>举个例子：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">zhangshixindeMacBook-Pro:publish-pkg zhangshixin$ npm install lodash zhangshixindeMacBook-Pro:publish-pkg zhangshixin$ ls </span><br><span class="line">index.js    package-lock.json </span><br><span class="line">node_modules     package.json </span><br><span class="line">zhangshixindeMacBook-Pro:publish-pkg zhangshixin$ ls node_modules/ </span><br><span class="line">lodash</span><br></pre></td></tr></table></figure></p>
-<p>下载后的项目文件夹：<br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20170802161757733.jpg" alt><br><strong>安装指定版本：</strong><br><code>npm install</code> 默认安装最新版本，如果想要安装指定版本，可以在库名称后加<code>@版本号</code>：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm install sax@latest</span><br><span class="line"><span class="meta">$</span> npm install sax@0.1.1</span><br><span class="line"><span class="meta">$</span> npm install sax@"&gt;=0.1.0 &lt;0.2.0"</span><br></pre></td></tr></table></figure></p>
+<p>下载后的项目文件夹：<br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20170802161757733.jpg" alt><br><strong>安装指定版本：</strong><br><code>npm install</code> 默认安装最新版本，如果想要安装指定版本，可以在库名称后加<code>@版本号</code>：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install sax@latest</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm install sax@0.1.1</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm install sax@<span class="string">"&gt;=0.1.0 &lt;0.2.0"</span></span></span><br></pre></td></tr></table></figure></p>
 <p>如果当前项目有 package.json 文件，下载包时会下载这个文件中指定的版本；<br>如果当前项目中没有 package.json 文件，就会下载指定包的最新版本。</p>
 <blockquote>
 <p>有时下载会报错：<code>npm install error saveError ENOENT: no such file or directory, open &#39;/Users/zhangshixin/package.json&#39;</code><br>解决办法：<br>-在目录下执行 <code>npm init</code> 创建 <code>package.json</code>，输入初始化信息<br>-然后再执行下载命令</p>
@@ -637,9 +606,9 @@ x
 <p><code>package.json</code> 中的 <code>scripts</code> 执行的脚本是本地项目内 <code>node_modules -&gt; .bin</code> 内的脚本。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">"scripts": &#123;</span><br><span class="line">			"build": "weex-builder src dist", </span><br><span class="line">		"build_plugin": "webpack --config ./tools/webpack.config.plugin.js --color", </span><br><span class="line">		"dev": "weex-builder src dist -w", </span><br><span class="line">		"serve": "serve -p 8080"</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20170802162754970.png" alt></p>
 <p><strong>直接运行 npm run 会列出当前项目的 package.json 中 scripts 属性下的所有脚本命令。</strong></p>
-<h5 id="npm-install-from-github"><a href="#npm-install-from-github" class="headerlink" title="npm install from github"></a>npm install from github</h5><p>npm install 也可以直接从 github 下载:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm install git://github.com/package/path.git</span><br><span class="line"><span class="meta">$</span> npm install git://github.com/package/path.git#0.1.0</span><br></pre></td></tr></table></figure></p>
+<h5 id="npm-install-from-github"><a href="#npm-install-from-github" class="headerlink" title="npm install from github"></a>npm install from github</h5><p>npm install 也可以直接从 github 下载:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install git://github.com/package/path.git</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm install git://github.com/package/path.git<span class="comment">#0.1.0</span></span></span><br></pre></td></tr></table></figure></p>
 <h5 id="npm-info"><a href="#npm-info" class="headerlink" title="npm info"></a>npm info</h5><p><code>npm info &lt;package-name&gt;</code> 可以查看指定包的信息：<br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20170802162824379.jpg" alt></p>
-<h5 id="npm-adduser"><a href="#npm-adduser" class="headerlink" title="npm adduser"></a>npm adduser</h5><p><code>npm adduser</code> 用于在npmjs.com注册一个用户:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm adduser</span><br><span class="line">Username: YOUR_USER_NAME</span><br><span class="line">Password: YOUR_PASSWORD</span><br><span class="line">Email: YOUR_EMAIL@domain.com</span><br></pre></td></tr></table></figure></p>
+<h5 id="npm-adduser"><a href="#npm-adduser" class="headerlink" title="npm adduser"></a>npm adduser</h5><p><code>npm adduser</code> 用于在npmjs.com注册一个用户:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm adduser</span></span><br><span class="line">Username: YOUR_USER_NAME</span><br><span class="line">Password: YOUR_PASSWORD</span><br><span class="line">Email: YOUR_EMAIL@domain.com</span><br></pre></td></tr></table></figure></p>
 <h5 id="npm-home-repo"><a href="#npm-home-repo" class="headerlink" title="npm home/repo"></a>npm home/repo</h5><p><code>npm home &lt;package-name&gt;</code>命令可以打开指定模块的主页；<br><code>npm repo &lt;package-name&gt;</code>命令则是打开指定模块的代码仓库</p>
 <h5 id="npm-prune"><a href="#npm-prune" class="headerlink" title="npm prune"></a>npm prune</h5><p>prune 即“修剪”的意思。</p>
 <p><code>npm prune</code> 可以检查出当前项目的 <code>node_modules</code>目录中，没有在<code>package.json</code>里提到的模块。</p>
@@ -649,10 +618,10 @@ x
 </blockquote>
 <p>要想发布，首先需要使用 <code>npm adduser</code>向 npmjs.com申请用户名（当然去官网也可以）。</p>
 <p>接着使用 <code>npm login</code> 在命令行中登录。</p>
-<p>登录以后，就可以使用 <code>npm publish</code>命令发布。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm publish</span><br></pre></td></tr></table></figure></p>
-<p>如果当前模块是一个beta版，比如1.3.1-beta.3，那么发布的时候需要使用tag参数，将其发布到指定标签，默认的发布标签是latest。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm publish --tag beta</span><br></pre></td></tr></table></figure></p>
-<p>如果发布私有模块，模块初始化的时候，需要加上scope参数。只有npm的付费用户才能发布私有模块。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm init --scope=&lt;yourscope&gt;</span><br></pre></td></tr></table></figure></p>
-<p>如果你的模块是用ES6写的，那么发布的时候，最好转成ES5。首先，需要安装Babel。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm install --save-dev babel-cli@6 babel-preset-es2015@6</span><br></pre></td></tr></table></figure></p>
+<p>登录以后，就可以使用 <code>npm publish</code>命令发布。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm publish</span></span><br></pre></td></tr></table></figure></p>
+<p>如果当前模块是一个beta版，比如1.3.1-beta.3，那么发布的时候需要使用tag参数，将其发布到指定标签，默认的发布标签是latest。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm publish --tag beta</span></span><br></pre></td></tr></table></figure></p>
+<p>如果发布私有模块，模块初始化的时候，需要加上scope参数。只有npm的付费用户才能发布私有模块。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm init --scope=&lt;yourscope&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>如果你的模块是用ES6写的，那么发布的时候，最好转成ES5。首先，需要安装Babel。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install --save-dev babel-cli@6 babel-preset-es2015@6</span></span><br></pre></td></tr></table></figure></p>
 <p>然后，在<code>package.json</code>里面写入<code>build</code>脚本。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">"scripts": &#123;</span><br><span class="line">  "build": "babel source --presets babel-preset-es2015 --out-dir distribution",</span><br><span class="line">  "prepublish": "npm run build"</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>运行上面的脚本，会将source目录里面的ES6源码文件，转为distribution目录里面的ES5源码文件。</p>
 <h4 id="国内镜像"><a href="#国内镜像" class="headerlink" title="国内镜像"></a>国内镜像</h4><p>不翻的话有时候 npm 比较卡，可以使用国内的淘宝镜像 cnpm： <a href="https://npm.taobao.org" target="_blank" rel="noopener">https://npm.taobao.org</a> 。</p>
@@ -1075,15 +1044,6 @@ x
   </span>
   <span class="author" itemprop="copyrightHolder">王泽</span>
 
-  
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
-    </span>
-    
-      <span class="post-meta-item-text">本站字数共&#58;</span>
-    
-    <span title="本站字数共">23.5k</span>
   
 </div>
 <div class="powered-by">

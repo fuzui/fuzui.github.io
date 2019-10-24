@@ -453,37 +453,6 @@
           
 
           
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  2.3k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  8
-                </span>
-              
-            </div>
-          
 
           
 
@@ -559,7 +528,7 @@
 <p>将这个mongodb-keyfile复制到其他两台机器上（我用的xftp6传过去的，也可以使用scp传）</p>
 <p>（4）权限<br>在三台机器上分别执行<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 700 /var/lib/mongo/mongodb-keyfile</span><br></pre></td></tr></table></figure></p>
 <p>在实现时不知为何我的700在master机器上一直无法生效！我采用另一种写法（u+x）<br>然后切换用户:</p>
-<font color="red">很重要，我在配置时因为直接用的root，所以mongodb-keyfile文件也是root用户，导致我后面修改配置文件后一直无法启动mongod！即需要在三台机器上使用chown切换为mongod。</font><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown mongod /var/lib/mongo/mongodb-keyfile</span><br></pre></td></tr></table></figure><br><br>（5）修改配置文件<br>在三台机器上都修改，keyFile和replSetName都一样。<br><code>vi /etc/mongod.conf</code><br>有两处修改<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>上面省略</span><br><span class="line">security:</span><br><span class="line"> authorization: enabled</span><br><span class="line"> keyFile: /var/lib/mongo/mongodb-keyfile</span><br><span class="line"><span class="meta">#</span>operationProfiling:</span><br><span class="line"></span><br><span class="line">replication:</span><br><span class="line"> replSetName: wangze</span><br></pre></td></tr></table></figure><br><br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190419214000.png" alt><br><br>（6） 启动<br><br>在三台机器上分别持续<code>systemctl restart mongod</code><br>启动成功什么信息都没有，如若启动失败，前往查看日志<code>cat /var/log/mongodb/mongod.log</code><br><br><br>（7）配置<br>进入mongodb-master的mongo<br><code>mongo</code><br><em> 初始化<br><code>rs.initiate()</code><br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190419205102.png" alt>
+<font color="red">很重要，我在配置时因为直接用的root，所以mongodb-keyfile文件也是root用户，导致我后面修改配置文件后一直无法启动mongod！即需要在三台机器上使用chown切换为mongod。</font><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown mongod /var/lib/mongo/mongodb-keyfile</span><br></pre></td></tr></table></figure><br><br>（5）修改配置文件<br>在三台机器上都修改，keyFile和replSetName都一样。<br><code>vi /etc/mongod.conf</code><br>有两处修改<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">上面省略</span></span><br><span class="line">security:</span><br><span class="line"> authorization: enabled</span><br><span class="line"> keyFile: /var/lib/mongo/mongodb-keyfile</span><br><span class="line"><span class="meta">#</span><span class="bash">operationProfiling:</span></span><br><span class="line"></span><br><span class="line">replication:</span><br><span class="line"> replSetName: wangze</span><br></pre></td></tr></table></figure><br><br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190419214000.png" alt><br><br>（6） 启动<br><br>在三台机器上分别持续<code>systemctl restart mongod</code><br>启动成功什么信息都没有，如若启动失败，前往查看日志<code>cat /var/log/mongodb/mongod.log</code><br><br><br>（7）配置<br>进入mongodb-master的mongo<br><code>mongo</code><br><em> 初始化<br><code>rs.initiate()</code><br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190419205102.png" alt>
 
 </em> 查看配置<br><code>rs.conf()</code><br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190419205018.png" alt><br>会发现只有一个节点，因为从节点和仲裁者节点还未添加。<br><br><em> 添加从节点<br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190419205119.png" alt><br><code>rs.add(&quot;mongodb-slave:27017&quot;)</code>
 </em> 添加仲裁者节点<br> <code>rs.addArb(&quot;mongodb-arbiter:27017&quot;)</code><br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190419205207.png" alt><br><em> 重新查看配置<br><code>rs.conf()</code><br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20190419205319.png" alt>
@@ -991,15 +960,6 @@
   </span>
   <span class="author" itemprop="copyrightHolder">王泽</span>
 
-  
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
-    </span>
-    
-      <span class="post-meta-item-text">本站字数共&#58;</span>
-    
-    <span title="本站字数共">23.5k</span>
   
 </div>
 <div class="powered-by">
