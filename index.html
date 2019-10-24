@@ -620,9 +620,7 @@
 
       
         
-          
-          将远程分支合并到自己分支上：先在自己分支上，切到目标分支，12345678910`git checkout 你的分支名``git fetch &lt;远程主机名&gt; 目标分支``git merge &lt;远程主机名&gt;/目标分支`
-          ...
+          <p>将远程分支合并到自己分支上：<br>先在自己分支上，<br>切到目标分支，<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">`git checkout 你的分支名`</span><br><span class="line">`git fetch &lt;远程主机名&gt; 目标分支`</span><br><span class="line">`git merge &lt;远程主机名&gt;/目标分支`</span><br><span class="line"></span><br><span class="line">if（有冲突）&#123;</span><br><span class="line">	解决冲突</span><br><span class="line">	git add .</span><br><span class="line">	git commit -m "解决冲突"</span><br><span class="line">&#125;</span><br><span class="line">git push -u &lt;远程主机名&gt; 目标分支</span><br></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/git合并分支.html#more" rel="contents">
@@ -794,13 +792,9 @@
 
       
         
-          
-          npm 是前端开发广泛使用的包管理工具，之前使用 Weex 时看了阮一峰前辈的文章了解了一些，这次结合官方文章总结一下，加深下理解吧！
-读完本文你将了解：[toc]
-什么是 npm？官方文档中对它的介绍是：
-
-npm makes it ea
-          ...
+          <p>npm 是前端开发广泛使用的包管理工具，之前使用 Weex 时看了阮一峰前辈的文章了解了一些，这次结合官方文章总结一下，加深下理解吧！</p><p>读完本文你将了解：<br>[toc]</p><h4 id="什么是-npm？"><a href="#什么是-npm？" class="headerlink" title="什么是 npm？"></a>什么是 npm？</h4><p><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20170802161055931.jpg" alt><br>官方文档中对它的介绍是：</p><blockquote>
+<p>npm makes it easy for JavaScript developers to share and reuse code, and it makes it easy to update the code that you’re sharing.</p>
+</blockquote>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/《转》npm与package-json快速入门教程.html#more" rel="contents">
@@ -972,9 +966,7 @@ npm makes it ea
 
       
         
-          
-          示例：向user表中插入一千万条数据，其中user_id11位手机号随机，可以重复；age为18-27之间；count随机金额，八位小数；status二百万数据为1，八百万数据为0。12345678910111213141516171819
-          ...
+          <p>示例：<br>向<code>user</code>表中插入一千万条数据，其中<code>user_id</code>11位手机号随机，可以重复；<code>age</code>为18-27之间；<code>count</code>随机金额，八位小数；<code>status</code>二百万数据为1，八百万数据为0。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 如果该名字存储过程已存在，则删除</span></span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">PROCEDURE</span> <span class="keyword">IF</span> <span class="keyword">EXISTS</span> proc_initData1;</span><br><span class="line"><span class="comment">-- 创建</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">PROCEDURE</span> proc_initData1 ( ) <span class="keyword">BEGIN</span></span><br><span class="line">	<span class="keyword">DECLARE</span></span><br><span class="line">		i <span class="built_in">INT</span> <span class="keyword">DEFAULT</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">DECLARE</span></span><br><span class="line">		uid <span class="built_in">VARCHAR</span> ( <span class="number">255</span> ) <span class="keyword">DEFAULT</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">DECLARE</span></span><br><span class="line">		<span class="keyword">count</span> <span class="built_in">DECIMAL</span>(<span class="number">20</span>,<span class="number">8</span>) <span class="keyword">DEFAULT</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">DECLARE</span></span><br><span class="line">		op <span class="built_in">INT</span> <span class="keyword">DEFAULT</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">DECLARE</span></span><br><span class="line">		age <span class="built_in">INT</span> <span class="keyword">DEFAULT</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">START</span> <span class="keyword">TRANSACTION</span>;</span><br><span class="line">	WHILE</span><br><span class="line">			i &lt;= 10000000 DO</span><br><span class="line">		<span class="keyword">SELECT</span></span><br><span class="line">			<span class="keyword">CONCAT</span>( <span class="string">'1'</span>, <span class="keyword">CEILING</span>( <span class="keyword">RAND</span>( ) * <span class="number">9000000000</span>+<span class="number">1000000000</span> ) ) <span class="keyword">INTO</span> uid;</span><br><span class="line">		<span class="keyword">SELECT</span></span><br><span class="line">			<span class="keyword">FLOOR</span>( <span class="number">18</span> + ( <span class="keyword">RAND</span>( ) * <span class="number">9</span> ) ) <span class="keyword">INTO</span> age;</span><br><span class="line">		<span class="keyword">SELECT</span></span><br><span class="line">			<span class="keyword">ROUND</span>( ( <span class="number">10</span> + ( <span class="keyword">RAND</span>( ) * <span class="number">1001</span> ) ), <span class="number">8</span> ) <span class="keyword">INTO</span> <span class="keyword">count</span>;</span><br><span class="line">		IF</span><br><span class="line">			i % 5 = 0 THEN</span><br><span class="line">				<span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">user</span> ( user_id, age, <span class="keyword">count</span>, <span class="keyword">status</span> )</span><br><span class="line">			<span class="keyword">VALUES</span></span><br><span class="line">				( uid, age, <span class="keyword">count</span>, <span class="number">1</span>);</span><br><span class="line">			ELSE <span class="keyword">INSERT</span> <span class="keyword">INTO</span> ryw_intelligent_dog ( user_id, age, <span class="keyword">count</span>, <span class="keyword">status</span>)</span><br><span class="line">			<span class="keyword">VALUES</span></span><br><span class="line">				( uid, age, <span class="keyword">count</span>, <span class="number">0</span> );</span><br><span class="line">		<span class="keyword">END</span> <span class="keyword">IF</span>;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">SET</span> i = i + <span class="number">1</span>;</span><br><span class="line">		</span><br><span class="line">	<span class="keyword">END</span> <span class="keyword">WHILE</span>;</span><br><span class="line">	<span class="keyword">COMMIT</span>;</span><br><span class="line">	</span><br><span class="line"><span class="keyword">END</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 调用</span></span><br><span class="line"><span class="keyword">CALL</span> proc_initData1 ( );</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 删除表数据</span></span><br><span class="line"><span class="keyword">truncate</span> <span class="keyword">table</span> <span class="keyword">user</span>;</span><br></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/mysql利用存储过程批量插入一千万数据（半小时）.html#more" rel="contents">
@@ -1146,10 +1138,7 @@ npm makes it ea
 
       
         
-          
-          0、写在前面的话最近想梳理公司项目的表间关系，从项目后台管理系统的操作入手，以及代码的hibernate注解入手，都不算特别尽人意，于是最后还是鼓捣了一下PowerDesigner的逆向工程图，这样更直观一些。
-想着以后不论项目切换或者接手
-          ...
+          <h3 id="0、写在前面的话"><a href="#0、写在前面的话" class="headerlink" title="0、写在前面的话"></a>0、写在前面的话</h3><p>最近想梳理公司项目的表间关系，从项目后台管理系统的操作入手，以及代码的hibernate注解入手，都不算特别尽人意，于是最后还是鼓捣了一下PowerDesigner的逆向工程图，这样更直观一些。</p><p>想着以后不论项目切换或者接手的时候肯定是用得上的，所以在这里也记录一下，毕竟，好记性不如烂笔头，更何况我这还不是好记性。看网上有个哥们说他已经是三次忘了步骤了，所以我吸取教训赶紧第一次就记录下来。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/PowerDesigner连接MySQL和逆向工程图.html#more" rel="contents">
@@ -1321,9 +1310,7 @@ npm makes it ea
 
       
         
-          
-           之前我们采用了配置文件的方式从数据库中读取用户进行登录。虽然该方式的灵活性相较于静态账号密码的方式灵活了许多，但是将数据库的结构暴露在明显的位置上，绝对不是一个明智的做法。本文通过Java代码实现UserDetailsService接口来
-          ...
+          <p> 之前我们采用了配置文件的方式从数据库中读取用户进行登录。虽然该方式的灵活性相较于静态账号密码的方式灵活了许多，但是将数据库的结构暴露在明显的位置上，绝对不是一个明智的做法。本文通过Java代码实现UserDetailsService接口来实现身份认证。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/Security身份认证之UserDetailsService.html#more" rel="contents">
@@ -1495,12 +1482,7 @@ npm makes it ea
 
       
         
-          
-          本文主要参考菜鸟教程等。
-一、栅格化1.响应式布局
-container2.栅格化布局col-md左右两栏默认一个row分为12个单位col-md-4col-md-8默认宽度小于992时，不再左右。
-3.栅格化col-sm宽度小于768时，不
-          ...
+          <p><em>本文主要参考菜鸟教程等。</em></p><h4 id="一、栅格化"><a href="#一、栅格化" class="headerlink" title="一、栅格化"></a>一、栅格化</h4><p>1.响应式布局</p><p><code>container</code><br>2.栅格化布局col-md<br>左右两栏<br>默认一个row分为12个单位<br><code>col-md-4</code><br><code>col-md-8</code><br>默认宽度小于992时，不再左右。</p><p>3.栅格化col-sm<br>宽度小于768时，不再左右。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/bootstrap基本样式.html#more" rel="contents">

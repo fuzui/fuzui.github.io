@@ -96,13 +96,13 @@
 
 
 
-<meta name="description" content="之前我们采用了配置文件的方式从数据库中读取用户进行登录。虽然该方式的灵活性相较于静态账号密码的方式灵活了许多，但是将数据库的结构暴露在明显的位置上，绝对不是一个明智的做法。本文通过Java代码实现UserDetailsService接口来实现身份认证。 1.1 UserDetailsService在身份认证中的作用Spring Security中进行身份验证的是AuthenticationMan">
+<meta name="description" content="之前我们采用了配置文件的方式从数据库中读取用户进行登录。虽然该方式的灵活性相较于静态账号密码的方式灵活了许多，但是将数据库的结构暴露在明显的位置上，绝对不是一个明智的做法。本文通过Java代码实现UserDetailsService接口来实现身份认证。">
 <meta name="keywords" content="springSecurity">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【转】Security身份认证之UserDetailsService">
 <meta property="og:url" content="https://fuzui.net/Security身份认证之UserDetailsService.html">
 <meta property="og:site_name" content="扶醉">
-<meta property="og:description" content="之前我们采用了配置文件的方式从数据库中读取用户进行登录。虽然该方式的灵活性相较于静态账号密码的方式灵活了许多，但是将数据库的结构暴露在明显的位置上，绝对不是一个明智的做法。本文通过Java代码实现UserDetailsService接口来实现身份认证。 1.1 UserDetailsService在身份认证中的作用Spring Security中进行身份验证的是AuthenticationMan">
+<meta property="og:description" content="之前我们采用了配置文件的方式从数据库中读取用户进行登录。虽然该方式的灵活性相较于静态账号密码的方式灵活了许多，但是将数据库的结构暴露在明显的位置上，绝对不是一个明智的做法。本文通过Java代码实现UserDetailsService接口来实现身份认证。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20180406152002371.png">
 <meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20180406152945823.png">
@@ -111,7 +111,7 @@
 <meta property="og:updated_time" content="2019-05-08T14:29:39.526Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【转】Security身份认证之UserDetailsService">
-<meta name="twitter:description" content="之前我们采用了配置文件的方式从数据库中读取用户进行登录。虽然该方式的灵活性相较于静态账号密码的方式灵活了许多，但是将数据库的结构暴露在明显的位置上，绝对不是一个明智的做法。本文通过Java代码实现UserDetailsService接口来实现身份认证。 1.1 UserDetailsService在身份认证中的作用Spring Security中进行身份验证的是AuthenticationMan">
+<meta name="twitter:description" content="之前我们采用了配置文件的方式从数据库中读取用户进行登录。虽然该方式的灵活性相较于静态账号密码的方式灵活了许多，但是将数据库的结构暴露在明显的位置上，绝对不是一个明智的做法。本文通过Java代码实现UserDetailsService接口来实现身份认证。">
 <meta name="twitter:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20180406152002371.png">
 
 
@@ -450,7 +450,7 @@
       
 
       
-        <p> 之前我们采用了配置文件的方式从数据库中读取用户进行登录。虽然该方式的灵活性相较于静态账号密码的方式灵活了许多，但是将数据库的结构暴露在明显的位置上，绝对不是一个明智的做法。本文通过Java代码实现UserDetailsService接口来实现身份认证。</p>
+        <p> 之前我们采用了配置文件的方式从数据库中读取用户进行登录。虽然该方式的灵活性相较于静态账号密码的方式灵活了许多，但是将数据库的结构暴露在明显的位置上，绝对不是一个明智的做法。本文通过Java代码实现UserDetailsService接口来实现身份认证。</p><a id="more"></a>
 <h5 id="1-1-UserDetailsService在身份认证中的作用"><a href="#1-1-UserDetailsService在身份认证中的作用" class="headerlink" title="1.1 UserDetailsService在身份认证中的作用"></a>1.1 UserDetailsService在身份认证中的作用</h5><p>Spring Security中进行身份验证的是AuthenticationManager接口，ProviderManager是它的一个默认实现，但它并不用来处理身份认证，而是委托给配置好的AuthenticationProvider，每个AuthenticationProvider会轮流检查身份认证。检查后或者返回Authentication对象或者抛出异常。</p>
 <p>验证身份就是加载响应的UserDetails，看看是否和用户输入的账号、密码、权限等信息匹配。此步骤由实现AuthenticationProvider的DaoAuthenticationProvider（它利用UserDetailsService验证用户名、密码和授权）处理。包含 GrantedAuthority 的 UserDetails对象在构建 Authentication对象时填入数据。<br><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/20180406152002371.png" alt></p>
 <h5 id="1-2-配置UserDetailsService"><a href="#1-2-配置UserDetailsService" class="headerlink" title="1.2 配置UserDetailsService"></a>1.2 配置UserDetailsService</h5><h6 id="1-2-1-更改Spring-Security-xml中身份的方式，使用自定义的UserDetailsService。"><a href="#1-2-1-更改Spring-Security-xml中身份的方式，使用自定义的UserDetailsService。" class="headerlink" title="1.2.1 更改Spring-Security.xml中身份的方式，使用自定义的UserDetailsService。"></a>1.2.1 更改Spring-Security.xml中身份的方式，使用自定义的UserDetailsService。</h6><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">security:authentication-manager</span>&gt;</span> </span><br><span class="line">	<span class="tag">&lt;<span class="name">security:authentication-provider</span> <span class="attr">user-service</span> <span class="attr">ref</span>=<span class="string">"favUserDetailService"</span>&gt;</span>     </span><br><span class="line">	<span class="tag">&lt;/<span class="name">security:authentication-provider</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">security:authentication-manager</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"favUserDetailService"</span> <span class="attr">class</span>=<span class="string">"com.favccxx.favsecurity.security.FavUserDetailService"</span> /&gt;</span></span><br></pre></td></tr></table></figure>

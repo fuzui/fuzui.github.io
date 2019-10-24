@@ -96,13 +96,13 @@
 
 
 
-<meta name="description" content="0、写在前面的话最近想梳理公司项目的表间关系，从项目后台管理系统的操作入手，以及代码的hibernate注解入手，都不算特别尽人意，于是最后还是鼓捣了一下PowerDesigner的逆向工程图，这样更直观一些。 想着以后不论项目切换或者接手的时候肯定是用得上的，所以在这里也记录一下，毕竟，好记性不如烂笔头，更何况我这还不是好记性。看网上有个哥们说他已经是三次忘了步骤了，所以我吸取教训赶紧第一次就记">
+<meta name="description" content="0、写在前面的话最近想梳理公司项目的表间关系，从项目后台管理系统的操作入手，以及代码的hibernate注解入手，都不算特别尽人意，于是最后还是鼓捣了一下PowerDesigner的逆向工程图，这样更直观一些。想着以后不论项目切换或者接手的时候肯定是用得上的，所以在这里也记录一下，毕竟，好记性不如烂笔头，更何况我这还不是好记性。看网上有个哥们说他已经是三次忘了步骤了，所以我吸取教训赶紧第一次就记录">
 <meta name="keywords" content="powerdesigner">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PowerDesigner连接MySQL和逆向工程图">
 <meta property="og:url" content="https://fuzui.net/PowerDesigner连接MySQL和逆向工程图.html">
 <meta property="og:site_name" content="扶醉">
-<meta property="og:description" content="0、写在前面的话最近想梳理公司项目的表间关系，从项目后台管理系统的操作入手，以及代码的hibernate注解入手，都不算特别尽人意，于是最后还是鼓捣了一下PowerDesigner的逆向工程图，这样更直观一些。 想着以后不论项目切换或者接手的时候肯定是用得上的，所以在这里也记录一下，毕竟，好记性不如烂笔头，更何况我这还不是好记性。看网上有个哥们说他已经是三次忘了步骤了，所以我吸取教训赶紧第一次就记">
+<meta property="og:description" content="0、写在前面的话最近想梳理公司项目的表间关系，从项目后台管理系统的操作入手，以及代码的hibernate注解入手，都不算特别尽人意，于是最后还是鼓捣了一下PowerDesigner的逆向工程图，这样更直观一些。想着以后不论项目切换或者接手的时候肯定是用得上的，所以在这里也记录一下，毕竟，好记性不如烂笔头，更何况我这还不是好记性。看网上有个哥们说他已经是三次忘了步骤了，所以我吸取教训赶紧第一次就记录">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/1007017-20180612095640002-283316605.png">
 <meta property="og:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/1007017-20180612095640508-571441195.png">
@@ -120,7 +120,7 @@
 <meta property="og:updated_time" content="2019-05-12T15:23:59.934Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PowerDesigner连接MySQL和逆向工程图">
-<meta name="twitter:description" content="0、写在前面的话最近想梳理公司项目的表间关系，从项目后台管理系统的操作入手，以及代码的hibernate注解入手，都不算特别尽人意，于是最后还是鼓捣了一下PowerDesigner的逆向工程图，这样更直观一些。 想着以后不论项目切换或者接手的时候肯定是用得上的，所以在这里也记录一下，毕竟，好记性不如烂笔头，更何况我这还不是好记性。看网上有个哥们说他已经是三次忘了步骤了，所以我吸取教训赶紧第一次就记">
+<meta name="twitter:description" content="0、写在前面的话最近想梳理公司项目的表间关系，从项目后台管理系统的操作入手，以及代码的hibernate注解入手，都不算特别尽人意，于是最后还是鼓捣了一下PowerDesigner的逆向工程图，这样更直观一些。想着以后不论项目切换或者接手的时候肯定是用得上的，所以在这里也记录一下，毕竟，好记性不如烂笔头，更何况我这还不是好记性。看网上有个哥们说他已经是三次忘了步骤了，所以我吸取教训赶紧第一次就记录">
 <meta name="twitter:image" content="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/1007017-20180612095640002-283316605.png">
 
 
@@ -459,8 +459,8 @@
       
 
       
-        <h3 id="0、写在前面的话"><a href="#0、写在前面的话" class="headerlink" title="0、写在前面的话"></a>0、写在前面的话</h3><p>最近想梳理公司项目的表间关系，从项目后台管理系统的操作入手，以及代码的hibernate注解入手，都不算特别尽人意，于是最后还是鼓捣了一下PowerDesigner的逆向工程图，这样更直观一些。</p>
-<p>想着以后不论项目切换或者接手的时候肯定是用得上的，所以在这里也记录一下，毕竟，好记性不如烂笔头，更何况我这还不是好记性。看网上有个哥们说他已经是三次忘了步骤了，所以我吸取教训赶紧第一次就记录下来。</p>
+        <h3 id="0、写在前面的话"><a href="#0、写在前面的话" class="headerlink" title="0、写在前面的话"></a>0、写在前面的话</h3><p>最近想梳理公司项目的表间关系，从项目后台管理系统的操作入手，以及代码的hibernate注解入手，都不算特别尽人意，于是最后还是鼓捣了一下PowerDesigner的逆向工程图，这样更直观一些。</p><p>想着以后不论项目切换或者接手的时候肯定是用得上的，所以在这里也记录一下，毕竟，好记性不如烂笔头，更何况我这还不是好记性。看网上有个哥们说他已经是三次忘了步骤了，所以我吸取教训赶紧第一次就记录下来。</p><a id="more"></a>
+
 <h3 id="1、MySQL数据库连接（JDBC方式）"><a href="#1、MySQL数据库连接（JDBC方式）" class="headerlink" title="1、MySQL数据库连接（JDBC方式）"></a>1、MySQL数据库连接（JDBC方式）</h3><p>JDBC的配置方式需要一些基础的环境和准备，但是也很简单，无非也就是JDK和mysql的连接jar包，这里不再展开阐述。</p>
 <h4 id="1-1-新建一个pdm，dbms选择mysql"><a href="#1-1-新建一个pdm，dbms选择mysql" class="headerlink" title="1.1 新建一个pdm，dbms选择mysql"></a>1.1 新建一个pdm，dbms选择mysql</h4><p><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/1007017-20180612095640002-283316605.png" alt></p>
 <h4 id="1-2-Database-Connect-选择数据库连接"><a href="#1-2-Database-Connect-选择数据库连接" class="headerlink" title="1.2 Database - Connect  选择数据库连接"></a>1.2 Database - Connect  选择数据库连接</h4><p><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/1007017-20180612095640508-571441195.png" alt><img src="https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/1007017-20180612095640508-571441195.png" alt></p>
