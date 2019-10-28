@@ -1831,7 +1831,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #bda7f7;
+  background: #7a4eff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2932,6 +2932,29 @@ hr {
 body {
   background: url("https://fuzui.oss-cn-shenzhen.aliyuncs.com/img/53d90292772ca.jpg");
 }
-.busuanzi-value {
+#busuanzi_value_site_uv {
   color: #1890ff;
+}
+#busuanzi_value_site_pv {
+  color: #1890ff;
+}
+.sidebar {
+  box-shadow: none;
+}
+.wobbleTransparentBK {
+  background-color: rgba(0,0,0,0) !important;
+}
+.wobbleTransparentLine {
+  border-color: rgba(0,0,0,0) !important;
+}
+#header,
+#footer {
+  background-color: #f5f5f5;
+}
+#sidebar,
+header {
+  z-index: 1 !important;
+}
+.main {
+  padding-bottom: 200px;
 }
