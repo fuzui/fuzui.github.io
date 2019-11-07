@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://fuzui.net/"/>
-  <updated>2019-07-05T07:29:22.170Z</updated>
+  <updated>2019-11-07T08:22:19.916Z</updated>
   <id>https://fuzui.net/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>&lt;转&gt;centos7下搭建ngrok服务器进行内网穿透</title>
+    <link href="https://fuzui.net/centos7%E4%B8%8B%E6%90%AD%E5%BB%BAngrok%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9B%E8%A1%8C%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F.html"/>
+    <id>https://fuzui.net/centos7下搭建ngrok服务器进行内网穿透.html</id>
+    <published>2019-11-07T08:08:52.000Z</published>
+    <updated>2019-11-07T08:22:19.916Z</updated>
+    
+    <content type="html"><![CDATA[<p>以下以阿里云centos7服务器为例，并且已经安装好git、golang</p><h3 id="一、下载ngrok"><a href="#一、下载ngrok" class="headerlink" title="一、下载ngrok"></a>一、下载ngrok</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /data/wwwroot</span><br><span class="line">git clone https://github.com/tutumcloud/ngrok.git</span><br></pre></td></tr></table></figure><h3 id="二、生成ngrok使用的https证书"><a href="#二、生成ngrok使用的https证书" class="headerlink" title="二、生成ngrok使用的https证书"></a>二、生成ngrok使用的https证书</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd /data/wwwroot/ngrok</span><br><span class="line">NGROK_DOMAIN="ngrok.test.com"</span><br><span class="line">openssl genrsa -out base.key 2048</span><br><span class="line">openssl req -new -x509 -nodes -key base.key -days 10000 -subj "/CN=$NGROK_DOMAIN" -out base.pem</span><br><span class="line">openssl genrsa -out server.key 2048</span><br><span class="line">openssl req -new -key server.key -subj "/CN=$NGROK_DOMAIN" -out server.csr</span><br><span class="line">openssl x509 -req -in server.csr -CA base.pem -CAkey base.key -CAcreateserial -days 10000 -out server.crt</span><br></pre></td></tr></table></figure><p>并替换<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cp base.pem assets/client/tls/ngrokroot.crt</span><br><span class="line">cp server.crt assets/server/tls/snakeoil.crt</span><br><span class="line">cp server.key assets/server/tls/snakeoil.key</span><br></pre></td></tr></table></figure></p><h3 id="三、编译服务端"><a href="#三、编译服务端" class="headerlink" title="三、编译服务端"></a>三、编译服务端</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make release-server</span><br></pre></td></tr></table></figure><p>生成<code>bin/ngrok</code></p><h3 id="四、编译客户端"><a href="#四、编译客户端" class="headerlink" title="四、编译客户端"></a>四、编译客户端</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GOOS=windows GOARCH=amd64 make release-client</span><br></pre></td></tr></table></figure><p>生成<code>bin/windows_amd64/ngrok.exe</code><br>把<code>ngrok.exe</code>下载到你电脑</p><blockquote><p>mac下编译： GOOS=darwin GOARCH=amd64 make release-client</p></blockquote><h3 id="五、运行服务端"><a href="#五、运行服务端" class="headerlink" title="五、运行服务端"></a>五、运行服务端</h3><p>后台运行<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup ./bin/ngrokd -tlsKey=server.key -tlsCrt=server.crt -domain="ngrok.test.com" -httpAddr=":3080" -httpsAddr=":3043" &gt;/dev/null 2&gt;log &amp;</span><br></pre></td></tr></table></figure></p><blockquote><p>注意事项<br>    1、3080，3043端口可以改成80，443，如果这两个端口空闲的话。<br>    2、阿里云安全组开放3080、3043、4443端口，4443是默认的客户端通信端口。<br>    3、iptables开放3080、3043、4443端口。<br>    4、添加两条域名解析ngrok和<em>.ngrok，第二条记得带上</em>.，不然无法匹配xxx.ngrok.test.com三级域名。</p></blockquote><h3 id="六、运行客户端"><a href="#六、运行客户端" class="headerlink" title="六、运行客户端"></a>六、运行客户端</h3><p>编辑配置文件ngrok.cfg<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">server_addr: "ngrok.test.com:4443"</span><br><span class="line">trust_host_root_certs: false</span><br></pre></td></tr></table></figure></p><p>运行<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ngrok -config=ngrok.cfg -subdomain abc 8080</span><br></pre></td></tr></table></figure></p><h3 id="七、如果80端口已经被其他程序占用，ngrok如何使用80端口，进行微信公众号开发本地调试？"><a href="#七、如果80端口已经被其他程序占用，ngrok如何使用80端口，进行微信公众号开发本地调试？" class="headerlink" title="七、如果80端口已经被其他程序占用，ngrok如何使用80端口，进行微信公众号开发本地调试？"></a>七、如果80端口已经被其他程序占用，ngrok如何使用80端口，进行微信公众号开发本地调试？</h3><p>因为微信公众号只支持80端口或443端口。<br><strong>方法一：</strong></p><p>如果你的服务器只用了80端口，那么你可以用443端口来开发。<br><strong>方法二：</strong></p><p>如果你的服务器80端口和443端口都被占用，且不能取消占用</p><ol><li>配置<code>ngrok.test.com</code>的80端口映射（使用nginx或apache对不同域名进行80端口映射）</li><li>设置代理和反向代理/都指向<code>http://test.ngrok.test.com:9080/</code></li><li>客户端只要设置前缀为test的ngrok代理，就可以通过<code>ngrok.test.com/xxx</code>直接访问</li></ol><p>为什么不直接指向<code>127.0.0.1:9080</code>?<br>试过了，没用，本地的9080端口虽然被<code>ngrok</code>占用，但无法直接通过<code>127.0.0.1:9080</code>访问。<br>所以我暂时只能再次发起http请求来进行转发。</p><p><strong>本文转自：</strong><br><em>作者：王乐城愚人云端<br>链接：<a href="https://www.jianshu.com/p/00794b151be7" target="_blank" rel="noopener">https://www.jianshu.com/p/00794b151be7</a></em></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;以下以阿里云centos7服务器为例，并且已经安装好git、golang&lt;/p&gt;
+&lt;h3 id=&quot;一、下载ngrok&quot;&gt;&lt;a href=&quot;#一、下载ngrok&quot; class=&quot;headerlink&quot; title=&quot;一、下载ngrok&quot;&gt;&lt;/a&gt;一、下载ngrok&lt;/h3&gt;&lt;
+      
+    
+    </summary>
+    
+      <category term="linux" scheme="https://fuzui.net/categories/linux/"/>
+    
+    
+      <category term="内网穿透" scheme="https://fuzui.net/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>PostgreSQL导入sql文件</title>

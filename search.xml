@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[centos7下搭建ngrok服务器进行内网穿透]]></title>
+    <url>%2Fcentos7%E4%B8%8B%E6%90%AD%E5%BB%BAngrok%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9B%E8%A1%8C%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F.html</url>
+    <content type="text"><![CDATA[以下以阿里云centos7服务器为例，并且已经安装好git、golang 一、下载ngrok12cd /data/wwwrootgit clone https://github.com/tutumcloud/ngrok.git 二、生成ngrok使用的https证书1234567cd /data/wwwroot/ngrokNGROK_DOMAIN="ngrok.test.com"openssl genrsa -out base.key 2048openssl req -new -x509 -nodes -key base.key -days 10000 -subj "/CN=$NGROK_DOMAIN" -out base.pemopenssl genrsa -out server.key 2048openssl req -new -key server.key -subj "/CN=$NGROK_DOMAIN" -out server.csropenssl x509 -req -in server.csr -CA base.pem -CAkey base.key -CAcreateserial -days 10000 -out server.crt 并替换123cp base.pem assets/client/tls/ngrokroot.crtcp server.crt assets/server/tls/snakeoil.crtcp server.key assets/server/tls/snakeoil.key 三、编译服务端1make release-server 生成bin/ngrok 四、编译客户端1GOOS=windows GOARCH=amd64 make release-client 生成bin/windows_amd64/ngrok.exe把ngrok.exe下载到你电脑 mac下编译： GOOS=darwin GOARCH=amd64 make release-client 五、运行服务端后台运行1nohup ./bin/ngrokd -tlsKey=server.key -tlsCrt=server.crt -domain="ngrok.test.com" -httpAddr=":3080" -httpsAddr=":3043" &gt;/dev/null 2&gt;log &amp; 注意事项 1、3080，3043端口可以改成80，443，如果这两个端口空闲的话。 2、阿里云安全组开放3080、3043、4443端口，4443是默认的客户端通信端口。 3、iptables开放3080、3043、4443端口。 4、添加两条域名解析ngrok和.ngrok，第二条记得带上.，不然无法匹配xxx.ngrok.test.com三级域名。 六、运行客户端编辑配置文件ngrok.cfg12server_addr: "ngrok.test.com:4443"trust_host_root_certs: false 运行1ngrok -config=ngrok.cfg -subdomain abc 8080 七、如果80端口已经被其他程序占用，ngrok如何使用80端口，进行微信公众号开发本地调试？因为微信公众号只支持80端口或443端口。方法一： 如果你的服务器只用了80端口，那么你可以用443端口来开发。方法二： 如果你的服务器80端口和443端口都被占用，且不能取消占用 配置ngrok.test.com的80端口映射（使用nginx或apache对不同域名进行80端口映射） 设置代理和反向代理/都指向http://test.ngrok.test.com:9080/ 客户端只要设置前缀为test的ngrok代理，就可以通过ngrok.test.com/xxx直接访问 为什么不直接指向127.0.0.1:9080?试过了，没用，本地的9080端口虽然被ngrok占用，但无法直接通过127.0.0.1:9080访问。所以我暂时只能再次发起http请求来进行转发。 本文转自：作者：王乐城愚人云端链接：https://www.jianshu.com/p/00794b151be7]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>内网穿透</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[PostgreSQL导入sql文件]]></title>
     <url>%2FPostgreSQL%E5%AF%BC%E5%85%A5sql%E6%96%87%E4%BB%B6.html</url>
     <content type="text"><![CDATA[最近新项目中用到PostgreSQL，运行测试导入表结构和数据是必须的，用navicat导入sql文件报错，之后查询了一下资料，得到了正确的导入方式：1.命令行（cmd或powershell）进入PostgreSQL安装目录1cd \PostgreSQL\11\bin 2.执行语句psql -d ethgateway -U ethgateway -f D:\Desktop\db.sql这里我用的powershell，所以我的命令是.\psql -d test -U fuzui -f D:\Desktop\db.sql -d 数据库名 -U 数据库用户名 -f sql文件路径3.回车之后提示输入用户密码，然后静待完成就可以了。]]></content>
